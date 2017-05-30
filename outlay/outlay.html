@@ -7,6 +7,7 @@
     <script src="../lib/mui.min.js"></script>
     <script src="../lib/lib.js"></script>
     <script src="../lib/fff.js"></script>
+    <script src="../lib/mui.picker.all.js"></script>
     <script>
         (function (doc, win) {
             var docEl = doc.documentElement,
@@ -30,30 +31,49 @@
     </script>
     <link rel="stylesheet" href="../css/mui.css">
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./outlay.css">
+    <link rel="stylesheet" href="../css/mui.picker.all.css">
+
 </head>
 <body>
 <div class="bg">
     <div class="bgCover"></div>
 </div>
-<div class="body">
-    <div class="index">
-        <div class="dailyInfo dailyCost">
-            <div class="dailyInfo_title">日成本</div>
-            <div class="dailyInfo_Num">666</div>
+<div class="title">
+    <div class="title_left mui-action-back"> < </div>
+    <div class="title_center">记支出</div>
+    <div class="title_right"></div>
+</div>
+<div class="body outlay">
+        <div class="outlay_item outlay_money">
+            <span class="outlay_money_title">金额：</span>
+            <span class="outlay_money_num">123.33</span>
+
         </div>
-        <div class="dailyInfo dailyBenefit">
-            <div class="dailyInfo_title">日收益</div>
-            <div class="dailyInfo_Num">123123</div>
+        <div class="outlay_item outlay_item">
+            饮食 | 午餐
         </div>
-        <hr/>
-        <div class="dailyInfo timeInfo">
-            <div class="dailyInfo_Num">12:00:22</div>
-            <div class="dailyInfo_title">后查看当日报告</div>
+        <div class="outlay_item outlay_type">
+            <div class="outlay_type_title">
+                一次性消费
+            </div>
+            <div class="mui-switch mui-switch-mini">
+                <div class="mui-switch-handle"></div>
+            </div>
+
         </div>
+        <div class="outlay_item outlay_time">
+                2015-01-01
+        </div>
+        <div class="outlay_item" contenteditable="true">
+                这里是备注
+        </div>
+    <div class="btns">
+        <div class="m_block_btn">值</div>
+        <div class="m_block_btn">不值</div>
     </div>
 </div>
 <script src="../config.js" charset="utf-8"></script>
-<script src="./index.js"></script>
+<script src="./outlay.js"></script>
 </body>
 </html>
