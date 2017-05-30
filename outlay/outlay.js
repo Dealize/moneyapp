@@ -12,31 +12,36 @@ require(['FFF','host','common','commonAjax','numKeyboard'],function (FFF,host,co
         // preloadLimit:5//预加载窗口数量限制(一旦超出,先进先出)默认不限制
     });
     mui.plusReady(function () {
-        var $dailyCost = $('.dailyCost'),
-            $dailyBenefit = $('.dailyBenefit'),
-            $timeInfo = $('.timeInfo'),
-            $timeInfoTime = $timeInfo.find('.dailyInfo_Num');
-
-        $dailyCost.on('click',function () {
-            // plus.webview.show('login');
-            common.openNewWindow({
-                url:'../login/login.html',
-                id:'login'
-            })
-        })
 
     })
+
     var $btns = $('.btns'),
+        numKeyboard,
+        $outlay_money = $('.outlay_money'),
+        $outlay_money_num = $('.outlay_money_num'),
         pageHeight =window.innerHeight;
-    $(window).resize(function(e) {
-        if(window.innerHeight<pageHeight){
-            $btns.hide();
-        }else{
-            $btns.show();
-        }
-    });
-    console.log(numKeyboard);
-    var NumKeyBoard = numKeyboard.NumKerBoard;
-    new NumKeyBoard().render();
+
+    bindResize();
+    initNumKeyBoard();
+
+    function bindResize(){
+        $(window).resize(function(e) {
+            if(window.innerHeight<pageHeight){
+                $btns.hide();
+            }else{
+                $btns.show();
+            }
+        });
+    }
+    function initNumKeyBoard(){
+        numKeyboard = new numKeyboard.NumKeyBoard({
+            targetDom:$outlay_money_num
+        }).render();
+        $outlay_money.on('click',function () {
+            numKeyboard.show();
+        })
+    }
+
+
 })
 

@@ -6,23 +6,38 @@ define(['FFF'],function (FFF) {
         Widget.apply(this,arguments);
     }
     NumKeyBoard.ATTRS = {
-        
+        targetDom:{
+            value:''
+        },
+        resultNum:{
+            value:''
+        }
     }
     F.extend(NumKeyBoard,Widget,{
         initialize:function () {
-            console.log(123);
+            var num = parseInt(this.targetDom.html());
+            num = isNaN(num)?0:num;
+            this.setResultNum(num);
         },
         renderUI:function () {
+            this.hide();
             this.renderDomStr();
         },
         bindUI:function () {
-            
+            var that = this;
+            $('.numkeyboardMask').on('click',function (e) {
+                console.log(e);
+                if(e.target.classList.contains('numkeyboardMask')){
+                    that.hide();
+                }
+            })
         },
         syncUI:function () {
             
         },
         renderDomStr:function () {
-            var domStr = '<table  class="numkeyboard" border="1">'+
+            var domStr = '<div class="numkeyboardMask">' +
+                '<table  class="numkeyboard" border="1">'+
                 '<tr>'+
                 '<td data-value="1">1</td>'+
                 '<td data-value="2">2</td>'+
@@ -42,14 +57,20 @@ define(['FFF'],function (FFF) {
                 '</tr>'+
                 '<tr>'+
                 '<td data-value="point">·</td>'+
-            '<td data-value="0">0</td>'+ '<td data-value=""></td>'+
-                '</tr>'+ '</table>';
-
+                '<td data-value="0">0</td>'+ '<td data-value=""></td>'+
+                '</tr>'+ '</table>'+ '</div>';
             this.getBoundingBox().append($(domStr));
+        },
+        show:function () {
+            this.getBoundingBox().show();
+        },
+        hide:function(){
+            this.getBoundingBox().hide();
         }
+
     })
 
     return {
-        NumKerBoard:NumKeyBoard
+        NumKeyBoard:NumKeyBoard
     }
 })
