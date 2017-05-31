@@ -40,8 +40,42 @@ require(['FFF','host','common','commonAjax','numKeyboard'],function (FFF,host,co
         $outlay_money.on('click',function () {
             numKeyboard.show();
         })
+        var _$targetDom = numKeyboard.getTargetDom();
+        numKeyboard.on('resultNumChange',function (data) {
+            var _data = data.value;
+            switch(_data.length){
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    _$targetDom.css({
+                        'fontSize':'2rem'
+                    })
+                    break;
+                case 5:
+                case 6:
+                case 7:
+
+                    _$targetDom.css({
+                        'fontSize':'1.5rem'
+                    })
+                    break;
+                case 8:
+                case 9:
+                case 10:
+                    _$targetDom.css({
+                        'fontSize':'1rem'
+                    })
+                    break;
+                case 11:
+                case 12:
+                    _$targetDom.css({
+                        'fontSize':'0.7rem'
+                    })
+                    break;
+            }
+        })
     }
-
-
 })
 

@@ -16,8 +16,10 @@ define(['FFF'],function (FFF) {
     F.extend(NumKeyBoard,Widget,{
         initialize:function () {
             var num = parseInt(this.targetDom.html());
-            num = isNaN(num)?0:num;
+            // num = isNaN(num)?'':num;
+            num = '';
             this.setResultNum(num);
+            this.$targetDom = this.getTargetDom();
         },
         renderUI:function () {
             this.hide();
@@ -26,10 +28,47 @@ define(['FFF'],function (FFF) {
         bindUI:function () {
             var that = this;
             $('.numkeyboardMask').on('click',function (e) {
-                console.log(e);
                 if(e.target.classList.contains('numkeyboardMask')){
                     that.hide();
                 }
+            })
+            $('.numkeyboardMask').on('click','td',function (e) {
+                var _currentValue = e.currentTarget.dataset.value,
+                resultNum = that.getResultNum();
+                if(!isNaN(parseInt(_currentValue))){
+                    if(resultNum.split('.')[1] && resultNum.split('.')[1].length>1){
+                        return;
+                    }
+                    if(resultNum.length>12){
+                        return;
+                    }
+                    if(resultNum[0]=='0'){
+                        resultNum = resultNum.substr(1,resultNum.length)
+                    }
+                    resultNum += _currentValue;
+                    that.setResultNum(resultNum);
+                }else if(_currentValue=='point'){
+                    if(resultNum.indexOf('.')<0){
+                        resultNum += '.';
+                        that.setResultNum(resultNum);
+                    }
+                }else if(_currentValue == 'del'){
+                    var resultArr = resultNum.split('');
+                    resultArr.pop();
+                    if(resultArr[resultArr.length-1]=='.'){
+                        resultArr.pop();
+                    }
+                    if(resultArr.length==0){
+                        resultArr = [0]
+                    }
+                    console.log(resultArr.length);
+                    that.setResultNum(resultArr.join(''));
+                }else if(_currentValue == 'ok'){
+                    that.hide();
+                }
+            })
+            this.on('resultNumChange',function (data) {
+                that.targetDom.html(data.value);
             })
         },
         syncUI:function () {

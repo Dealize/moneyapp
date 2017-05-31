@@ -45,14 +45,14 @@ define(['host'],function (host) {
             }
             var newWindow = plus.webview.create(data.url,data.id,style,data.extras||null);
 
-            newWindow.show('zoom-fade-out');
+            newWindow.show('zoom-fade-out',400);
         },
         /**
          * data.id
          * @param data
          */
         showWindow:function (data) {
-            plus.webview.show(data.id,'zoom-fade-out');
+            plus.webview.show(data.id,'zoom-fade-out',400);
         }
     }
 
