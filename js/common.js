@@ -22,9 +22,17 @@ define(['host'],function (host) {
                 dataType:'json',//服务器返回json格式数据
                 type:'post',//HTTP请求类型
                 success:function(data){
+                    that.ajaxLoading(false);
+                	if(data.state==0){
+                		that.openNewWindow({
+                		url:'../login/login.html',
+                		id:'login'
+                	})
+                	}
                     //获得服务器响应
                     callback(data);
-                    that.ajaxLoading(false);
+
+                    
                 }
             });
         },

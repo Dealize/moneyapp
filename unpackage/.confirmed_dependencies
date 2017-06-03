@@ -59,7 +59,11 @@
 			"lib/mui.min.js",
 			"img/1.jpg",
 			"lib/fff.js",
-			"widget/numKeyboard.js"
+			"widget/numKeyboard.js",
+			"img/loading.gif"
+		],
+		"refer": [
+			"login/login.html"
 		]
 	},
 	"income/income.html": {
@@ -69,7 +73,13 @@
 			"host.js",
 			"js/commonAjax.js",
 			"js/common.js",
-			"css/mui.css"
+			"css/mui.css",
+			"css/base.css",
+			"lib/mui.min.js",
+			"img/1.jpg",
+			"lib/lib.js",
+			"config.js",
+			"lib/fff.js"
 		]
 	}
 }

@@ -21,7 +21,6 @@
   padding: 0.2rem 0.2rem;
   padding-top: 0.8rem;
 }
-
 .outlay_item .mui-switch {
   display: inline-block;
 }
@@ -32,14 +31,25 @@
   text-align: right;
   padding: 0;
 }
-.outlay_money_title {
+.outlay_money .outlay_money_title {
   position: relative;
   bottom: 0.3rem;
   padding-left: 0.2rem;
 }
-.outlay_money_num {
+.outlay_money .outlay_money_num {
   font-size: 2rem;
   font-weight: lighter;
+}
+.outlay_kind {
+  display: flex;
+  justify-content: space-between;
+}
+.outlay_kind .outlay_type_title {
+  width: 70%;
+}
+.outlay_kind .mui-switch {
+  position: relative;
+  top: -0.2rem;
 }
 .outlay_type {
   display: flex;
@@ -49,6 +59,26 @@
 .outlay_type .outlay_type_title {
   padding-bottom: 0.2rem;
 }
-.outlay_time {
+.outlay_time,
+.outlay_time2 {
   font-weight: normal;
+  display: flex;
+  padding-bottom: 0;
+  justify-content: space-between;
+}
+.outlay_time .outlay_time_title,
+.outlay_time2 .outlay_time_title {
+  width: 39%;
+}
+.outlay_time input,
+.outlay_time2 input {
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  position: relative;
+  top: -0.4rem;
+  width: 3rem;
+}
+.outlay_time2 {
+  display: none;
 }
