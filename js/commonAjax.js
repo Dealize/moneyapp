@@ -5,7 +5,14 @@ define(['common'],function (common) {
         },
         categoryList:function(data,callback){
         	return common.commonAjax('category/get',data,callback);
+        },
+        billAdd:function(data,callback){
+        	return common.commonAjax('bill/add',data,callback);
+        },
+        reportDaily:function(data,callback){
+        	return common.commonAjax('report/daily',data,callback,true);
         }
+        
     }
     return exports;
 })

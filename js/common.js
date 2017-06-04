@@ -13,9 +13,11 @@ define(['host'],function (host) {
                 $loading.hide();
             }
         },
-        commonAjax:function(url,data,callback){
+        commonAjax:function(url,data,callback,isHideMask){
             var that = this;
-            this.ajaxLoading(true);
+            if(isHideMask!=true){
+	            this.ajaxLoading(true);        	
+            }
             mui.ajax(host.api+url,{
                 data:data,
                 crossDomain:true,
@@ -36,6 +38,16 @@ define(['host'],function (host) {
                 }
             });
         },
+        createWebview:function(data){
+        	var style = {
+                background:'transparent'
+            }
+            for(var i in data.styles){
+                style[i] = data.styles[i];
+            }
+            var newWindow = plus.webview.create(data.url,data.id,style,data.extras||null);
+            return newWindow;
+        },
         /**
          *
          * @param data
@@ -45,15 +57,9 @@ define(['host'],function (host) {
          * styles
          */
         openNewWindow:function(data){
-            var style = {
-                background:'transparent'
-            }
-            for(var i in data.styles){
-                style[i] = data.styles[i];
-            }
-            var newWindow = plus.webview.create(data.url,data.id,style,data.extras||null);
-
+            this.createWebview(data);
             newWindow.show('zoom-fade-out',400);
+            return newWindow;
         },
         /**
          * data.id

@@ -8,7 +8,7 @@ define([],function () {
             api:'http://moneyapi.dofyou.win/'
         }
     }
-    var enviroment = 'test';
+    var enviroment = 'dev';
     console.log(urlObj[enviroment].api);
     return urlObj[enviroment];
 })

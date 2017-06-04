@@ -12,6 +12,9 @@ require(['FFF','host','common','commonAjax'],function (FFF,host,common,commonAja
             },function (res) {
             	if(res.state==1){
             		mui.back();
+            		common.showWindow({
+            			id:'index'
+            		})
             	}else{
                 alert(res.msg);
             	}
