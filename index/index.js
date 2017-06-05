@@ -29,7 +29,7 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 		bind_outlay();
 
 	})
-
+	countdown()
 	function bind_incone() {
 		$dailyCost.on('click', function() {
 			common.showWindow({
@@ -74,6 +74,57 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 		commonAjax.reportDaily({},function(res){
 			var costNum = Math.round(res.data.sum);
 			$dailyInfo_Num.html(costNum)
+		})
+	}
+
+
+	function countdown(){
+		var sevenAclock = new Date(),
+			timeFlag = 0,
+			timeSplit = '';
+		sevenAclock.setHours(18);
+		sevenAclock.setMinutes(10);
+		sevenAclock.setSeconds(0);
+		var timer = setInterval(function(){
+			if(timeFlag%2==0){
+				timeSplit = ' ';
+			}else{
+				timeSplit = ':';
+			}
+			var timeStr = '';
+
+//			if(disHour<=-1 ){
+//				clearInterval(timer);
+//				showReportBtn();
+//			}
+			
+			var nowTime = new Date();
+			var disTime = Math.floor((sevenAclock - nowTime)/1000);
+			var disHour = Math.floor(disTime/3600);
+			disTime = disTime - disHour*3600;
+			var disMin = Math.floor(disTime/60);
+			disTime = disTime - disMin*60;
+			var disSec = disTime;
+			if(disHour<10){
+				disHour = '0' +disHour;
+			}
+			if(disMin<10){
+				disMin = '0' +disMin;
+			}
+			if(disSec<10){
+				disSec = '0'+disSec;
+			}
+			timeStr = disHour + timeSplit + disMin + timeSplit + disSec;
+			timeFlag ++ ;
+			$timeInfoTime.html(timeStr); 			
+//			
+		},500)
+	}
+	function showReportBtn(){
+		$timeInfo.find('.dailyInfo_title').hide();
+		$timeInfoTime.html('点击查看当日报告');
+		$timeInfo.on('click',function(e){
+			console.log(666);
 		})
 	}
 })
