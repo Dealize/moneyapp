@@ -165,12 +165,16 @@ input[type="date"] {
   top: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../img/loading.gif');
-  background-position: center ;
-  background-repeat: no-repeat;
-  background-color: #2b2c30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
   z-index: 999;
   color: yellow;
+}
+.ajaxLoading .ajaxLoading_text {
+  color: #fff;
+  font-size: 2rem;
 }
 .bg {
   background: url('../img/1.jpg');
@@ -283,6 +287,78 @@ body {
 }
 .loginBtns {
   margin-top: 40px;
+}
+.m_card {
+  color: #333333;
+  background: rgba(200, 200, 200, 0.8);
+  border-radius: 5px;
+  margin: 0.3rem 0;
+}
+.m_card > div {
+  padding: 0.2rem;
+  position: relative;
+}
+.m_card .m_card_head {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.m_card .m_card_body .m_card_left {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.m_card .m_card_body .m_card_right {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.m_card .m_card_foot {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.m_card .m_card_foot,
+.m_card .m_card_head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0.8rem;
+}
+.m_card .m_card_foot .m_card_left,
+.m_card .m_card_head .m_card_left {
+  font-size: 12px;
+  position: absolute;
+  left: 10px;
+}
+.m_card .m_card_foot .m_card_right,
+.m_card .m_card_head .m_card_right {
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+}
+.m_card .m_card_center {
+  margin: 0 auto;
+}
+.m_list .m_list_item {
+  margin: 1rem 0;
+}
+.m_list .m_list_item .m_list_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.m_list .m_list_item .m_list_body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.m_progress {
+  background: #333;
+  height: 8px;
+  width: 100%;
+  position: relative;
+}
+.m_progress .m_progress_bar {
+  height: 100%;
+  width: 30%;
+  background: #3387ff;
 }
 .numkeyboardMask {
   background: rgba(0, 0, 0, 0);

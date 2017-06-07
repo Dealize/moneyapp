@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../lib/mui.min.js"></script>
+    <script src="../lib/lib.js"></script>
+    <script src="../lib/fff.js"></script>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+                dpr = window.top === window.self ? dpr : 1, //被iframe引用时，禁止缩放
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+            docEl.dataset.dpr = dpr;
+            var recalc = function () {
+                var width = docEl.clientWidth;
+                if (width / dpr > 750) {
+                    width = 750 * dpr;
+                }
+                docEl.dataset.percent = 100;
+                docEl.style.fontSize = width / 10 + 'px';
+            };
+            recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+        })(document, window);
+    </script>
+    <link rel="stylesheet" href="../css/mui.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="./dailyReport.css">
+</head>
+<body>
+<div class="bg">
+    <div class="bgCover"></div>
+</div>
+<div class="title">
+    <div class="title_left mui-action-back"> < </div>
+</div>
+<div class="body dailyReport">
+    <div class="date_block">
+        2016-03-01
+    </div>
+    <div class="day_block">
+        星期三
+    </div>
+    <div class="m_card wallet">
+        <div class="m_card_body">
+            <div class="m_card_right">校正</div>
+            <div class=" dailyReport_text">账户余额:</div>
+            <div class=" dailyReport_num">123132</div>
+        </div>
+    </div>
+    <div class="m_card dailyOutlay">
+        <div class="m_card_body">
+            <div class="outlay">
+                <div class="dailyOutlay dailyReport_text">今日支出:</div>
+                <div class="dailyOutlay dailyReport_num">123132</div>
+            </div>
+            <div class="income">
+                <div class="dailyOutlay dailyReport_text">今日收入:</div>
+                <div class="dailyOutlay dailyReport_num">123132</div>
+            </div>
+        </div>
+    </div>
+    <div class="m_card dailyCost">
+        <div class="m_card_body">
+            <div class="costNum">
+                <div class="dailyOutlay dailyReport_text">进行中的成本:</div>
+                <div class="dailyOutlay dailyReport_num">33</div>
+                <div class="dailyOutlay dailyReport_text2">个</div>
+            </div>
+            <div class="costList_title">即将完成：</div>
+        </div>
+        <div class="m_card_foot">
+            <div class="m_list">
+                <div class="m_list_item">
+                    <div class="m_list_head">
+                        <div class="m_list_head_left">房租 133/天</div>
+                        <div class="m_list_head_right">27/30</div>
+                    </div>
+                    <div class="m_list_body">
+                        <div class="m_progress">
+                            <div class="m_progress_bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m_list_item">
+                    <div class="m_list_head">
+                        <div class="m_list_head_left">房租 133/天</div>
+                        <div class="m_list_head_right">27/30</div>
+                    </div>
+                    <div class="m_list_body">
+                        <div class="m_progress">
+                            <div class="m_progress_bar"></div>
+                        </div>
+                    </div>
+                </div><div class="m_list_item">
+                <div class="m_list_head">
+                    <div class="m_list_head_left">房租 133/天</div>
+                    <div class="m_list_head_right">27/30</div>
+                </div>
+                <div class="m_list_body">
+                    <div class="m_progress">
+                        <div class="m_progress_bar"></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!--页眉，放置标题-->
+        <!--<div class="mui-card-header">页眉</div>-->
+        <!--&lt;!&ndash;内容区&ndash;&gt;-->
+        <!--<div class="mui-card-content">内容区</div>-->
+        <!--&lt;!&ndash;页脚，放置补充信息或支持的操作&ndash;&gt;-->
+        <!--<div class="mui-card-footer">页脚</div>-->
+    </div>
+    <div class="m_card inout_list">
+        <div class="m_card_body">
+            <div class="m_card_left">收支详情：</div>
+            <div class="m_list">
+                <div class="m_list_item">
+                    <div class="m_list_body">
+                        <div class="m_list_body_text">111</div>
+                        <div class="m_list_body_tex2">222</div>
+                    </div>
+                </div>
+                <div class="m_list_item">
+                    <div class="m_list_body">
+                        <div class="m_list_body_text">111</div>
+                        <div class="m_list_body_tex2">222</div>
+                    </div>
+                </div>
+                <div class="m_list_item">
+                    <div class="m_list_body">
+                        <div class="m_list_body_text">111</div>
+                        <div class="m_list_body_tex2">222</div>
+                    </div>
+                </div>
+                <div class="m_list_item">
+                    <div class="m_list_body">
+                        <div class="m_list_body_text">111</div>
+                        <div class="m_list_body_tex2">222</div>
+                    </div>
+                </div>
+                <div class="m_list_item">
+                    <div class="m_list_body">
+                        <div class="m_list_body_text">111</div>
+                        <div class="m_list_body_tex2">222</div>
+                    </div>
+                </div>
+                <div class="m_list_item">
+                    <div class="m_list_body">
+                        <div class="m_list_body_text">111</div>
+                        <div class="m_list_body_tex2">222</div>
+                    </div>
+                </div>
+                <div class="m_list_item">
+                    <div class="m_list_body">
+                        <div class="m_list_body_text">111</div>
+                        <div class="m_list_body_tex2">222</div>
+                    </div>
+                </div>
+                <div class="m_list_item">
+                    <div class="m_list_body">
+                        <div class="m_list_body_text">111</div>
+                        <div class="m_list_body_tex2">222</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--页眉，放置标题-->
+        <!--<div class="mui-card-header">页眉</div>-->
+        <!--&lt;!&ndash;内容区&ndash;&gt;-->
+        <!--<div class="mui-card-content">内容区</div>-->
+        <!--&lt;!&ndash;页脚，放置补充信息或支持的操作&ndash;&gt;-->
+        <!--<div class="mui-card-footer">页脚</div>-->
+    </div>
+    <div class="">账户余额</div>
+    <div>成本、收益 的占比</div>
+    <div>支出、收入</div>
+    <div>即将完结的成本</div>
+    <div>当日收支详情</div>
+</div>
+<script src="../config.js" charset="utf-8"></script>
+<script src="./dailyReport.js"></script>
+</body>
+</html>

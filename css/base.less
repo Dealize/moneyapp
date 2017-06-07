@@ -29,10 +29,18 @@ input[type="number"],input[type="date"]{
 .ajaxLoading{
   position:fixed;
   left:0;top:0;right:0;bottom:0;
-  background-image:url('../img/loading.gif') ;
-  background-position:center ;
-  background-repeat:no-repeat ;
-  background-color:rgba(43,44,48,1);
+  //background-image:url('../img/loading.gif') ;
+  //background-position:center ;
+  //background-repeat:no-repeat ;
+  //background-color:rgba(43,44,48,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,1);
+  .ajaxLoading_text{
+    color:#fff;
+    font-size:2rem;
+  }
   z-index:999;
   color:yellow;
 }
@@ -58,6 +66,7 @@ body{
   font-weight: lighter;
   font-size:14px;
 }
+
 .title{
   text-align: center;
   height:0.8rem;
@@ -83,7 +92,6 @@ body{
   top:0;
   font-weight: bolder;
 }
-
 .body{
 }
 
@@ -140,12 +148,82 @@ body{
   }
 }
 
-
 .loginInput{
   margin-top:50%;
   margin-bottom:10%
 }
 .loginBtns{
   margin-top:40px;
+}
+
+.m_card{
+  color:#333333;
+  background: rgba(200,200,200,0.8);
+  //background: #fff;
+  border-radius:5px;
+  margin:0.3rem 0;
+  &>div{
+    padding:0.2rem;
+    position:relative;
+  }
+  .m_card_head{
+    border-bottom:1px solid rgba(0,0,0,0.1);
+  }
+  .m_card_body{
+    .m_card_left{
+      position:absolute;left:10px;top:10px;
+    }
+    .m_card_right{
+      position:absolute;right:10px;top:10px;
+    }
+  }
+  .m_card_foot{
+    border-top:1px solid rgba(0,0,0,0.1);
+  }
+  .m_card_foot,.m_card_head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:0.8rem;
+    .m_card_left{
+      font-size:12px;
+      position:absolute;left:10px;
+    }
+    .m_card_right{
+      font-size:12px;
+      position:absolute;right:10px;
+    }
+  }
+  .m_card_center{
+    margin:0 auto;
+  }
+
+}
+.m_list{
+  .m_list_item{
+    margin:1rem 0;
+    .m_list_head{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .m_list_body{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+.m_progress{
+  background:#333;
+  height:8px;
+  width:100%;
+  position:relative;
+  .m_progress_bar{
+    //position: ;
+    height:100%;
+    width:30%;
+    background:rgba(51,135,255,1);
+  }
 }
 @import "widget";

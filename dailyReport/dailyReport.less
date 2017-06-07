@@ -1,0 +1,93 @@
+.dailyReport{
+  padding:10px;
+  .dailyReport_text{
+    margin-right:10px;
+  }
+  .dailyReport_num{
+    font-size:1.2rem
+  }
+  .date_block,.day_block{
+    text-align: right;
+  }
+  .date_block{
+    font-size:1rem;
+  }
+  .day_block{
+    margin:10px 0;
+  }
+
+  .wallet,.dailyOutlay,.dailyCost {
+    .m_card_body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .dailyReport_text,.dailyReport_text2{
+        position:relative;
+        top:0.25rem;
+      }
+      .dailyReport_text2{
+        margin-left:5px;
+      }
+    }
+  }
+  .wallet{
+    .m_card_head{
+      border:0px;
+    }
+    .m_card_body{
+      min-height:4rem;
+    }
+  }
+  .dailyOutlay{
+    .m_card_body{
+      min-height:4rem;
+      flex-direction: column;
+      &>div{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .income{
+        border-top: 1px solid rgba(0,0,0,0.1);
+        margin-top: 0.2rem;
+        padding-top: 0.2rem;
+      }
+    }
+  }
+  .dailyCost{
+    .m_card_body{
+      min-height:4rem;
+      flex-direction: column;
+      .costNum{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .costList_title{
+      position:absolute;
+      bottom: 5px;
+      left: 10px;
+    }
+  }
+  .m_list{
+    width:100%;
+  }
+  .inout_list{
+    .m_card_left{
+      top:20px;
+    }
+    .m_card_body{
+      padding-top:0.8rem;
+    }
+    .m_list{
+      padding:0 0.8rem;
+    }
+    .m_list_item{
+      border-bottom:1px solid rgba(0,0,0,0.1);
+      padding-bottom:10px;
+    }
+  }
+}

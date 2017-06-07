@@ -11,6 +11,7 @@ requirejs.config({
         common:'./js/common',
         commonAjax:'./js/commonAjax',
         host:'./host',
+        moment:'./lib/moment',
         //页面部分
         // login:'./login/login'
 

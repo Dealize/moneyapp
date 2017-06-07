@@ -11,13 +11,6 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard'], function(FFF, ho
 		// ],
 		// preloadLimit:5//预加载窗口数量限制(一旦超出,先进先出)默认不限制
 	});
-	mui.plusReady(function() {
-		commonAjax.categoryList({}, function(res) {
-			console.log(res);
-			set_pickerData(res.data);
-
-		})
-	})
 	
 	var $btns = $('.btns'),
 		numKeyboard,
@@ -51,6 +44,18 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard'], function(FFF, ho
 		$outlay_btn2 = $('.outlay_btn2'),
 		picker = null,
 		pageHeight = window.innerHeight;
+
+	mui.plusReady(function() {
+		commonAjax.categoryList({}, function(res) {
+			console.log(res);
+			$outlay_type_num.html(res.data[0].name+'|'+res.data[0].secondCategory[0].name);
+			resultData.categoryId = res.data[0].secondCategory[0].value;
+			set_pickerData(res.data);
+
+		})
+	})
+		
+
 
 	bindResize();
 	initNumKeyBoard();

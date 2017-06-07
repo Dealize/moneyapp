@@ -13,25 +13,27 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 		preloadLimit: 5 //预加载窗口数量限制(一旦超出,先进先出)默认不限制
 	});
 	var $dailyCost = $('.dailyCost'),
+		$dailyCost_Num = $dailyCost.find('.dailyInfo_Num'),
 		$dailyBenefit = $('.dailyBenefit'),
-		$dailyInfo_Num = $dailyBenefit.find('.dailyInfo_Num'),
+		$dailyBenefit_Num = $dailyBenefit.find('.dailyInfo_Num'),
 		$timeInfo = $('.timeInfo'),
 		$timeInfoTime = $timeInfo.find('.dailyInfo_Num'),
-		currentWebview ;
-		
-		
-		;
+		$timeInfoText = $timeInfo.find('.dailyInfo_title'),
+		currentWebview;
+
+	;
 
 	mui.plusReady(function() {
 		currentWebview = plus.webview.currentWebview();
 		getData();
 		bind_incone();
 		bind_outlay();
-
+		bind_loginFinish();
+		countdown();
 	})
-	countdown()
+
 	function bind_incone() {
-		$dailyCost.on('click', function() {
+		$dailyBenefit.on('click', function() {
 			common.showWindow({
 				id: 'income'
 			})
@@ -52,7 +54,7 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 	}
 
 	function bind_outlay() {
-		$dailyBenefit.on('click', function() {
+		$dailyCost.on('click', function() {
 			common.showWindow({
 				id: 'outlay'
 			})
@@ -70,61 +72,75 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 		}, false);
 	}
 
-	function getData(){
-		commonAjax.reportDaily({},function(res){
-			var costNum = Math.round(res.data.sum);
-			$dailyInfo_Num.html(costNum)
+	function getData() {
+		commonAjax.reportDaily({}, function(res) {
+			console.log(res);
+			var costNum = res.data.sum;
+			$dailyCost_Num.html(costNum)
 		})
 	}
 
-
-	function countdown(){
+	function countdown() {
 		var sevenAclock = new Date(),
-			timeFlag = 0,
+			timeFlag = 1,
 			timeSplit = '';
-		sevenAclock.setHours(18);
-		sevenAclock.setMinutes(10);
-		sevenAclock.setSeconds(0);
-		var timer = setInterval(function(){
-			if(timeFlag%2==0){
-				timeSplit = ' ';
-			}else{
-				timeSplit = ':';
-			}
-			var timeStr = '';
+		sevenAclock.setHours(23);
+		sevenAclock.setMinutes(23);
+		sevenAclock.setSeconds(00);
+		var disHour, disMin, disSec, disTime;
+		var timer = setInterval(function() {
 
-//			if(disHour<=-1 ){
-//				clearInterval(timer);
-//				showReportBtn();
-//			}
+			if(timeFlag % 2 == 0) {
+				timeSplit = ' ';
+			} else {
+				timeSplit = ':';
+				var nowTime = new Date();
+				disTime = Math.floor((sevenAclock - nowTime) / 1000);
+				disHour = Math.floor(disTime / 3600);
+				disTime = disTime - disHour * 3600;
+				disMin = Math.floor(disTime / 60);
+				disTime = disTime - disMin * 60;
+				disSec = disTime;
+
+				if(disHour <= -1) {
+					showReportBtn();
+					clearInterval(timer);
+					return;
+				} else {
+					if(disHour < 10) {
+						disHour = '0' + disHour;
+					}
+					if(disMin < 10) {
+						disMin = '0' + disMin;
+					}
+					if(disSec < 10) {
+						disSec = '0' + disSec;
+					}
+					var timeStr = '';
+
+				timeStr = disHour + timeSplit + disMin + timeSplit + disSec;
+				$timeInfoTime.html(timeStr);
+				}
+				
+			}
+			timeFlag++;
 			
-			var nowTime = new Date();
-			var disTime = Math.floor((sevenAclock - nowTime)/1000);
-			var disHour = Math.floor(disTime/3600);
-			disTime = disTime - disHour*3600;
-			var disMin = Math.floor(disTime/60);
-			disTime = disTime - disMin*60;
-			var disSec = disTime;
-			if(disHour<10){
-				disHour = '0' +disHour;
-			}
-			if(disMin<10){
-				disMin = '0' +disMin;
-			}
-			if(disSec<10){
-				disSec = '0'+disSec;
-			}
-			timeStr = disHour + timeSplit + disMin + timeSplit + disSec;
-			timeFlag ++ ;
-			$timeInfoTime.html(timeStr); 			
-//			
-		},500)
+			//			
+		}, 500)
 	}
-	function showReportBtn(){
-		$timeInfo.find('.dailyInfo_title').hide();
-		$timeInfoTime.html('点击查看当日报告');
-		$timeInfo.on('click',function(e){
+
+	function showReportBtn() {
+		$timeInfoTime.hide();
+		$timeInfoText.html('点击查看当日报告').css({'font-size':'0.7rem'});
+		$timeInfoText.on('click', function(e) {
 			console.log(666);
+		})
+	}
+
+	function bind_loginFinish(){
+		var loginWebview = plus.webview.currentWebview();
+		loginWebview.addEventListener('show',function(){
+			alert('currentWebviewshow1')
 		})
 	}
 })

@@ -81,6 +81,24 @@
       "lib/lib.js",
       "config.js",
       "lib/fff.js"
+    ],
+    "refer": []
+  },
+  "dailyReport/dailyReport.html": {
+    "resources": [
+      "host.js",
+      "js/commonAjax.js",
+      "css/base.css",
+      "js/common.js",
+      "lib/mui.min.js",
+      "img/1.jpg",
+      "lib/lib.js",
+      "lib/moment.js",
+      "dailyReport/dailyReport.js",
+      "dailyReport/dailyReport.css",
+      "css/mui.css",
+      "config.js",
+      "lib/fff.js"
     ]
   }
 }
