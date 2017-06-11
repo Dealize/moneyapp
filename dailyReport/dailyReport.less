@@ -42,11 +42,29 @@
     .m_card_body{
       min-height:4rem;
       flex-direction: column;
+      padding:0.8rem 0.2rem;
       &>div{
         width:100%;
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+      .outlayProgress{
+        text-align: center;
+        &>div{
+          flex-grow:1;
+          height:30px;
+          line-height:30px;
+        }
+        .outlayProgress_1{
+          color:#fff;
+          background:rgba(76,144,52,1);
+        }
+        .outlayProgress_2{
+          color:#fff;
+          background:rgba(153,84,68,1);
+
+        }
       }
       .income{
         border-top: 1px solid rgba(0,0,0,0.1);

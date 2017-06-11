@@ -290,7 +290,7 @@ body {
 }
 .m_card {
   color: #333333;
-  background: rgba(200, 200, 200, 0.8);
+  background: #fff;
   border-radius: 5px;
   margin: 0.3rem 0;
 }
