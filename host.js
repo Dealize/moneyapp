@@ -11,7 +11,7 @@ define([],function () {
         	api:'http://moneyapibeta.dofyou.win'
         }
     }
-    var enviroment = 'beta';
+    var enviroment = 'test';
     console.log(urlObj[enviroment].api);
     return urlObj[enviroment];
 })
