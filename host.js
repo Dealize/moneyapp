@@ -6,9 +6,12 @@ define([],function () {
         },
         test:{
             api:'http://moneyapi.dofyou.win/'
+        },
+        beta:{
+        	api:'http://moneyapibeta.dofyou.win'
         }
     }
-    var enviroment = 'dev';
+    var enviroment = 'beta';
     console.log(urlObj[enviroment].api);
     return urlObj[enviroment];
 })

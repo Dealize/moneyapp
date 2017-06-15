@@ -1,4 +1,4 @@
-require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard'], function(FFF, host, common, commonAjax, numKeyboard) {
+require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], function(FFF, host, common, commonAjax, numKeyboard,moment) {
 	mui.init({
 		// preloadPages:[
 		//     {
@@ -18,13 +18,14 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard'], function(FFF, ho
 			money: 0,
 			categoryId: null,
 			billType: 1,
-			beginTime: null,
+			beginTime: '',
 			comment: '',
 			endTime: null,
 			isWorth: null,
 			walletId: 1
 
 		},
+		validToggle = true;
 		$body = $('.body'),
 		$outlay_money = $('.outlay_money'),
 		$outlay_money_num = $('.outlay_money_num'),
@@ -161,7 +162,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard'], function(FFF, ho
 				$outlay_kind_title.html('持续性消费');
 				$outlay_time2.show().css('display', 'flex');
 				$outlay_time_title.html('起始于');
-				resultData.billType = 2;
+				$outlay_time2_days.html('');
 				$body.animate({
 					scrollTop: 100
 				}, 600)
@@ -169,7 +170,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard'], function(FFF, ho
 			} else {
 				$outlay_kind_title.html('一次性消费');
 				$outlay_time_title.html('消费于');
-				resultData.billType = 1;
+
 				$body.animate({
 					scrollTop: 0
 				}, 600)
@@ -199,7 +200,27 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard'], function(FFF, ho
 				resultData.endTime = null;
 			}else{
 				resultData.endTime = val;
+				if(resultData.beginTime==''){
+					alert('请先选择消费起始时间');
+					validToggle = false;
+				}else{
+					var beginTime = moment(resultData.beginTime);
+					var endTime = moment(val);
+					var disDay = endTime - beginTime;
+					if(disDay<0){
+						alert(终止时间不能大于起始时间);	
+						validToggle = false;
+					}else{
+						console.log(disDay);
+						disDay = Math.abs(disDay/1000/3600/24);
+						$outlay_time2_days.html('持续'+disDay+'天');
+						validToggle = true;
+					}
+				}
+
+				
 			}
+			console.log(val);
 		})
 	}
 	function bind_outlay_btn(){
@@ -222,6 +243,9 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard'], function(FFF, ho
 				alert(i+'不能为空');
 				return ;
 			}
+		}
+		if(!validToggle){
+			alert('有数据未填写正确，请检查');
 		}
 		if(confirm('是否要保存？')){
 			commonAjax.billAdd(resultData,function(res){

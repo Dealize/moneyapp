@@ -25,11 +25,11 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 
 	mui.plusReady(function() {
 		currentWebview = plus.webview.currentWebview();
-		getData();
-		bind_incone();
-		bind_outlay();
-		bind_loginFinish();
-		countdown();
+        getData();
+        bind_incone();
+        bind_outlay();
+        bind_loginFinish();
+        // countdown();
 	})
 
 	function bind_incone() {
@@ -43,7 +43,6 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 			id: 'income'
 		});
 		//		var incomeWebView = plus.webview.getWebviewById('income');
-		console.log(incomeWebView);
 		setTimeout(function() {
 			incomeWebView.addEventListener('hide', function(e) {
 				console.log(e);
@@ -73,12 +72,15 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 	}
 
 	function getData() {
-		commonAjax.reportDaily({}, function(res) {
+		commonAjax.reportIndex({}, function(res) {
 			console.log(res);
-			var costNum = res.data.sum;
-			$dailyCost_Num.html(costNum)
+			var costNum = res.data.indexInfo.outlayData_money;
+			var benefitNum = res.data.indexInfo.incomeData_money;
+			$dailyCost_Num.html(costNum);
+			$dailyBenefit_Num.html(benefitNum);
 		})
 	}
+
 
 	function countdown() {
 		var sevenAclock = new Date(),
@@ -89,10 +91,11 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 		sevenAclock.setSeconds(00);
 		var disHour, disMin, disSec, disTime;
 		var timer = setInterval(function() {
-
 			if(timeFlag % 2 == 0) {
 				timeSplit = ' ';
+				console.log(6666666);
 			} else {
+				console.log(11111);
 				timeSplit = ':';
 				var nowTime = new Date();
 				disTime = Math.floor((sevenAclock - nowTime) / 1000);
@@ -118,14 +121,13 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 					}
 					var timeStr = '';
 
-				timeStr = disHour + timeSplit + disMin + timeSplit + disSec;
-				$timeInfoTime.html(timeStr);
+
 				}
 				
 			}
+            timeStr = disHour + timeSplit + disMin + timeSplit + disSec;
+            $timeInfoTime.html(timeStr);
 			timeFlag++;
-			
-			//			
 		}, 500)
 	}
 

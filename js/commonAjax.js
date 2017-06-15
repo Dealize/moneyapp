@@ -11,8 +11,10 @@ define(['common'],function (common) {
         },
         reportDaily:function(data,callback){
         	return common.commonAjax('report/daily',data,callback,true);
+        },
+        reportIndex:function(data,callback){
+            return common.commonAjax('report/index',data,callback,true);
         }
-        
     }
     return exports;
 })
