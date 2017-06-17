@@ -214,7 +214,8 @@
 				"refer": [
 					"login/login.html",
 					"outlay/outlay.html",
-					"income/income.html"
+					"income/income.html",
+					"dailyReport/dailyReport.html"
 				],
 				"priority": 0
 			},
@@ -277,7 +278,11 @@
 					"img/1.jpg",
 					"lib/lib.js",
 					"config.js",
-					"lib/fff.js"
+					"lib/fff.js",
+					"lib/mui.picker.all.js",
+					"css/mui.picker.all.css",
+					"widget/numKeyboard.js",
+					"lib/moment.js"
 				],
 				"refer": [],
 				"priority": 0

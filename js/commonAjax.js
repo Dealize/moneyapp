@@ -6,6 +6,9 @@ define(['common'],function (common) {
         categoryList:function(data,callback){
         	return common.commonAjax('category/get',data,callback);
         },
+        incomecategory:function(data,callback){
+        	return common.commonAjax('incomecategory/get',data,callback);
+        },
         billAdd:function(data,callback){
         	return common.commonAjax('bill/add',data,callback);
         },

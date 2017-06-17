@@ -33,7 +33,7 @@ define(['host'], function(host) {
 								id: 'login'
 							})
 						} else {
-							that.openNewWindow({
+							that.showWebview({
 								url: '../login/login.html',
 								id: 'login'
 							})
@@ -63,17 +63,12 @@ define(['host'], function(host) {
 		 * data:要传递的参数
 		 * styles
 		 */
-		openNewWindow: function(data) {
-			var newWindow = this.createWebview(data);
-			newWindow.show('fade-in', 400);
-			return newWindow;
-		},
-		/**
-		 * data.id
-		 * @param data
-		 */
-		showWindow: function(data) {
-			plus.webview.show(data.id, 'fade-in', 400);
+		showWebview: function(data) {
+			var _webview = plus.webview.getWebviewById(data.id);
+			if(!_webview){
+				_webview  = this.createWebview(data); 
+			}
+			_webview.show(data.id, 'fade-in', 400);
 		}
 	}
 

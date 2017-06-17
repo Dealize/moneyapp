@@ -7,6 +7,7 @@
     <script src="../lib/mui.min.js"></script>
     <script src="../lib/lib.js"></script>
     <script src="../lib/fff.js"></script>
+    <script src="../lib/mui.picker.all.js"></script>
     <script>
         (function (doc, win) {
             var docEl = doc.documentElement,
@@ -31,6 +32,8 @@
     <link rel="stylesheet" href="../css/mui.css">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="./income.css">
+    <link rel="stylesheet" href="../css/mui.picker.all.css">
+
 </head>
 <body>
 <div class="bg">
@@ -38,11 +41,43 @@
 </div>
 <div class="title">
     <div class="title_left mui-action-back"> < </div>
-    <div class="title_center">记收入</div>
-    <div class="title_right">123</div>
+    <div class="title_center">记支出</div>
+    <div class="title_right"></div>
 </div>
-<div class="body">
+<div class="body outlay">
+        <div class="outlay_item outlay_money">
+            <span class="outlay_money_title">金额：</span>
+            <span class="outlay_money_num">0</span>
+        </div>
+        <div class="outlay_item outlay_type">
+            <span class="outlay_type_title">类别：</span>
+            <span class="outlay_type_num"></span>
+        </div>
+        <div class="outlay_item outlay_kind">
+            <div class="outlay_kind_title">
+                一次性消费
+            </div>
+            <div class="mui-switch mui-switch-mini">
+                <div class="mui-switch-handle"></div>
+            </div>
 
+        </div>
+        <div class="outlay_item outlay_time">
+            <label for="time1" class="outlay_time_title">收益于</label>
+            <input type="date" id="time1" class="outlay_time_num" placeholder="请选择时间"/>
+        </div>
+        <div class="outlay_item outlay_time2 ">
+            <label for="time2" class="outlay_time_title">结束于</label>
+            <label for="time2" class="outlay_time_days">11天</label>
+            <input type="date" id="time2" class="outlay_time_num" />
+        </div>
+        <div class="outlay_item outlay_comment" contenteditable="true">
+                这里是备注
+        </div>
+    <div class="btns">
+        <div class="m_block_btn outlay_btn1">值</div>
+        <div class="m_block_btn outlay_btn2">不值</div>
+    </div>
 </div>
 <script src="../config.js" charset="utf-8"></script>
 <script src="./income.js"></script>

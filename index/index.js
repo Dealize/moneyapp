@@ -29,7 +29,7 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
         bind_incone();
         bind_outlay();
         bind_loginFinish();
-        // countdown();
+        countdown();
 	})
 
 	function bind_incone() {
@@ -42,14 +42,10 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 			url: '../income/income.html',
 			id: 'income'
 		});
-		//		var incomeWebView = plus.webview.getWebviewById('income');
-		setTimeout(function() {
-			incomeWebView.addEventListener('hide', function(e) {
-				console.log(e);
-				//			location.reload();
-			}, false);
-		}, 500);
-
+		incomeWebView.addEventListener('hide', function(e) {
+			incomeWebView.reload();
+			getData();
+		}, false);
 	}
 
 	function bind_outlay() {
@@ -62,12 +58,10 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 			url: '../outlay/outlay.html',
 			id: 'outlay'
 		});
-		//		var outlayWebView = plus.webview.getWebviewById('outlay');
 		outlayWebView.addEventListener('hide', function(e) {
 			console.log(e);
 			outlayWebView.reload();
 			getData();
-			//			location.reload();
 		}, false);
 	}
 
@@ -93,9 +87,7 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 		var timer = setInterval(function() {
 			if(timeFlag % 2 == 0) {
 				timeSplit = ' ';
-				console.log(6666666);
 			} else {
-				console.log(11111);
 				timeSplit = ':';
 				var nowTime = new Date();
 				disTime = Math.floor((sevenAclock - nowTime) / 1000);
@@ -134,11 +126,15 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 	function showReportBtn() {
 		$timeInfoTime.hide();
 		$timeInfoText.html('点击查看当日报告').css({'font-size':'0.7rem'});
-		$timeInfoText.on('click', function(e) {
-			console.log(666);
+		 $timeInfoText.on('click', function(e) {
+		common.showWebview({
+			id:'dailyReport',
+			url:'../dailyReport/dailyReport.html'
 		})
-	}
+    })
 
+	}
+   
 	function bind_loginFinish(){
 		var loginWebview = plus.webview.currentWebview();
 		loginWebview.addEventListener('show',function(){

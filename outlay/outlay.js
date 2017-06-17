@@ -25,8 +25,9 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 			walletId: 1
 
 		},
-		validToggle = true;
-		$body = $('.body'),
+		validToggle = true,
+	    billTimeType = 1,
+    	$body = $('.body'),
 		$outlay_money = $('.outlay_money'),
 		$outlay_money_num = $('.outlay_money_num'),
 		$outlay_type = $('.outlay_type'),
@@ -159,7 +160,8 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 		})
 		$outlay_kind_switch[0].addEventListener('toggle', function(event) {
 			if(event.detail.isActive) {
-				$outlay_kind_title.html('持续性消费');
+                billTimeType = 2;
+                $outlay_kind_title.html('持续性消费');
 				$outlay_time2.show().css('display', 'flex');
 				$outlay_time_title.html('起始于');
 				$outlay_time2_days.html('');
@@ -168,7 +170,8 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 				}, 600)
 				
 			} else {
-				$outlay_kind_title.html('一次性消费');
+                billTimeType = 1;
+                $outlay_kind_title.html('一次性消费');
 				$outlay_time_title.html('消费于');
 
 				$body.animate({
@@ -190,9 +193,9 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 			}else{
 				resultData.beginTime = val;
 			}
-			if(resultData.billType==1){
-				resultData.endTime = resultData.beginTime;
-			}
+			if(billTimeType==1){
+                resultData.endTime = resultData.beginTime;
+            }
 		})
 		$outlay_time2_data.on('input',function(e){
 			var val = e.target.value;
@@ -208,7 +211,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 					var endTime = moment(val);
 					var disDay = endTime - beginTime;
 					if(disDay<0){
-						alert(终止时间不能大于起始时间);	
+						alert('终止时间不能大于起始时间');
 						validToggle = false;
 					}else{
 						console.log(disDay);
