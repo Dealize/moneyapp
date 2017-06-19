@@ -1,110 +1,112 @@
 {
-	"index/index.html": {
-		"resources": [
-			"css/base.css",
-			"js/mui.min.js",
-			"img/1.jpg",
-			"index/index.js",
-			"js/lib.js",
-			"css/mui.css",
-			"js/fff.js",
-			"host.js",
-			"js/commonAjax.js",
-			"js/common.js",
-			"lib/mui.min.js",
-			"lib/lib.js",
-			"config.js",
-			"index/index.css",
-			"lib/fff.js",
-			"img/loading.gif"
-		],
-		"refer": [
-			"login/login.html",
-			"outlay/outlay.html",
-			"income/income.html",
-			"dailyReport/dailyReport.html"
-		]
-	},
-	"login/login.html": {
-		"resources": [
-			"login/login.js",
-			"css/base.css",
-			"js/fff.js",
-			"js/mui.min.js",
-			"img/1.jpg",
-			"js/lib.js",
-			"css/mui.css",
-			"host.js",
-			"js/common.js",
-			"lib/mui.min.js",
-			"lib/lib.js",
-			"config.js",
-			"lib/fff.js",
-			"js/commonAjax.js",
-			"img/loading.gif"
-		],
-		"refer": []
-	},
-	"outlay/outlay.html": {
-		"resources": [
-			"outlay/outlay.js",
-			"outlay/outlay.css",
-			"host.js",
-			"js/commonAjax.js",
-			"js/common.js",
-			"css/mui.css",
-			"lib/mui.picker.all.js",
-			"css/mui.picker.all.css",
-			"css/base.css",
-			"lib/lib.js",
-			"config.js",
-			"lib/mui.min.js",
-			"img/1.jpg",
-			"lib/fff.js",
-			"widget/numKeyboard.js",
-			"img/loading.gif",
-			"lib/moment.js"
-		],
-		"refer": [
-			"login/login.html"
-		]
-	},
-	"income/income.html": {
-		"resources": [
-			"income/income.js",
-			"income/income.css",
-			"host.js",
-			"js/commonAjax.js",
-			"js/common.js",
-			"css/mui.css",
-			"css/base.css",
-			"lib/mui.min.js",
-			"img/1.jpg",
-			"lib/lib.js",
-			"config.js",
-			"lib/fff.js",
-			"lib/mui.picker.all.js",
-			"css/mui.picker.all.css",
-			"widget/numKeyboard.js",
-			"lib/moment.js"
-		],
-		"refer": []
-	},
-	"dailyReport/dailyReport.html": {
-		"resources": [
-			"host.js",
-			"js/commonAjax.js",
-			"css/base.css",
-			"js/common.js",
-			"lib/mui.min.js",
-			"img/1.jpg",
-			"lib/lib.js",
-			"lib/moment.js",
-			"dailyReport/dailyReport.js",
-			"dailyReport/dailyReport.css",
-			"css/mui.css",
-			"config.js",
-			"lib/fff.js"
-		]
-	}
+  "index/index.html": {
+    "resources": [
+      "css/base.css",
+      "js/mui.min.js",
+      "img/1.jpg",
+      "index/index.js",
+      "js/lib.js",
+      "css/mui.css",
+      "js/fff.js",
+      "host.js",
+      "js/commonAjax.js",
+      "js/common.js",
+      "lib/mui.min.js",
+      "lib/lib.js",
+      "config.js",
+      "index/index.css",
+      "lib/fff.js",
+      "img/loading.gif"
+    ],
+    "refer": [
+      "login/login.html",
+      "outlay/outlay.html",
+      "income/income.html",
+      "dailyReport/dailyReport.html"
+    ]
+  },
+  "login/login.html": {
+    "resources": [
+      "login/login.js",
+      "css/base.css",
+      "js/fff.js",
+      "js/mui.min.js",
+      "img/1.jpg",
+      "js/lib.js",
+      "css/mui.css",
+      "host.js",
+      "js/common.js",
+      "lib/mui.min.js",
+      "lib/lib.js",
+      "config.js",
+      "lib/fff.js",
+      "js/commonAjax.js",
+      "img/loading.gif",
+      "login/login.css"
+    ],
+    "refer": []
+  },
+  "outlay/outlay.html": {
+    "resources": [
+      "outlay/outlay.js",
+      "outlay/outlay.css",
+      "host.js",
+      "js/commonAjax.js",
+      "js/common.js",
+      "css/mui.css",
+      "lib/mui.picker.all.js",
+      "css/mui.picker.all.css",
+      "css/base.css",
+      "lib/lib.js",
+      "config.js",
+      "lib/mui.min.js",
+      "img/1.jpg",
+      "lib/fff.js",
+      "widget/numKeyboard.js",
+      "img/loading.gif",
+      "lib/moment.js"
+    ],
+    "refer": [
+      "login/login.html"
+    ]
+  },
+  "income/income.html": {
+    "resources": [
+      "income/income.js",
+      "income/income.css",
+      "host.js",
+      "js/commonAjax.js",
+      "js/common.js",
+      "css/mui.css",
+      "css/base.css",
+      "lib/mui.min.js",
+      "img/1.jpg",
+      "lib/lib.js",
+      "config.js",
+      "lib/fff.js",
+      "lib/mui.picker.all.js",
+      "css/mui.picker.all.css",
+      "widget/numKeyboard.js",
+      "lib/moment.js"
+    ],
+    "refer": []
+  },
+  "dailyReport/dailyReport.html": {
+    "resources": [
+      "host.js",
+      "js/commonAjax.js",
+      "css/base.css",
+      "js/common.js",
+      "lib/mui.min.js",
+      "img/1.jpg",
+      "lib/lib.js",
+      "lib/moment.js",
+      "dailyReport/dailyReport.js",
+      "dailyReport/dailyReport.css",
+      "css/mui.css",
+      "config.js",
+      "lib/fff.js"
+    ],
+    "refer": []
+  }
 }

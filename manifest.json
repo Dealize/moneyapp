@@ -235,7 +235,8 @@
 					"config.js",
 					"lib/fff.js",
 					"js/commonAjax.js",
-					"img/loading.gif"
+					"img/loading.gif",
+					"login/login.css"
 				],
 				"refer": [],
 				"priority": 0

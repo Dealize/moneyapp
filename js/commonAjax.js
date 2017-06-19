@@ -3,6 +3,9 @@ define(['common'],function (common) {
         login:function (data, callback) {
             return common.commonAjax('myAuthor/login',data,callback);
         },
+        register:function (data,callback) {
+            return common.commonAjax('myAuthor/register',data,callback);
+        },
         categoryList:function(data,callback){
         	return common.commonAjax('category/get',data,callback);
         },

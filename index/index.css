@@ -8,6 +8,19 @@
   justify-content: flex-end;
   box-sizing: border-box;
 }
+.toolBar {
+  position: absolute;
+  width: 100%;
+  top: 3px;
+  height: 0.6rem;
+  padding: 0 5px;
+}
+.moreSetting {
+  border: 1px solid ;
+  padding: 8px;
+  float: right;
+  font-size: 10px;
+}
 .dailyInfo {
   padding: 0 0.5rem;
   height: 2rem;

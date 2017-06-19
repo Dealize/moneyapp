@@ -34,7 +34,7 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 
 	function bind_incone() {
 		$dailyBenefit.on('click', function() {
-			common.showWindow({
+			common.showWebview({
 				id: 'income'
 			})
 		})
@@ -50,7 +50,7 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 
 	function bind_outlay() {
 		$dailyCost.on('click', function() {
-			common.showWindow({
+			common.showWebview({
 				id: 'outlay'
 			})
 		})
