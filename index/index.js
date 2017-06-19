@@ -19,9 +19,8 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 		$timeInfo = $('.timeInfo'),
 		$timeInfoTime = $timeInfo.find('.dailyInfo_Num'),
 		$timeInfoText = $timeInfo.find('.dailyInfo_title'),
+		$moreSettingBtn = $('.moreSetting'),
 		currentWebview;
-
-	;
 
 	mui.plusReady(function() {
 		currentWebview = plus.webview.currentWebview();
@@ -29,6 +28,7 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
         bind_incone();
         bind_outlay();
         bind_loginFinish();
+        bind_moreSetting();
         countdown();
 	})
 
@@ -73,6 +73,16 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 			$dailyCost_Num.html(costNum);
 			$dailyBenefit_Num.html(benefitNum);
 		})
+	}
+
+	function bind_moreSetting(){
+		$moreSettingBtn.on('click',function(){
+			common.showWebview({
+	            id:'moreSetting',
+	            url:'../moreSetting/moreSetting.html'
+	        })	
+		})
+
 	}
 
 

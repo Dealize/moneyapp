@@ -29,7 +29,7 @@ define(['host'], function(host) {
 					if(data.state == 0) {
 						var loginWebview = plus.webview.getWebviewById('login');
 						if(loginWebview) {
-							that.showWindow({
+							that.showWebview({
 								id: 'login'
 							})
 						} else {
@@ -53,6 +53,7 @@ define(['host'], function(host) {
 				style[i] = data.styles[i];
 			}
 			var newWindow = plus.webview.create(data.url, data.id, style, data.extras || null);
+			console.log(newWindow);
 			return newWindow;
 		},
 		/**

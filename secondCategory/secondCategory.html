@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../lib/mui.min.js"></script>
+    <script src="../lib/lib.js"></script>
+    <script src="../lib/fff.js"></script>
+    <script src="../lib/mui.picker.all.js"></script>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+                dpr = window.top === window.self ? dpr : 1, //被iframe引用时，禁止缩放
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+            docEl.dataset.dpr = dpr;
+            var recalc = function () {
+                var width = docEl.clientWidth;
+                if (width / dpr > 750) {
+                    width = 750 * dpr;
+                }
+                docEl.dataset.percent = 100;
+                docEl.style.fontSize = width / 10 + 'px';
+            };
+            recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+        })(document, window);
+    </script>
+    <link rel="stylesheet" href="../css/mui.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="./secondCategory.css">
+    <link rel="stylesheet" href="../css/mui.picker.all.css">
+
+</head>
+<body>
+<div class="bg">
+    <div class="bgCover"></div>
+</div>
+<div class="title">
+    <div class="title_left mui-action-back"> < </div>
+    <div class="title_center"></div>
+    <div class="title_right"></div>
+</div>
+<div class="body secondCategory">
+
+	
+    <div class="secondCategory_1">
+    	<div class="secondCategory_1_title">123</div>
+    	<div class="secondCategory_1_desc">点击进行修改</div>
+    	
+    </div>
+    <ul class="secondCategoryUl">
+        <li class="secondCategory_item">
+            <span class="item_title">账户金额</span>
+            <span> 修改</span>
+        </li>
+        <li class="secondCategory_item">
+            <span class="item_title">账户金额</span>
+            <span> 保存</span>
+        </li>
+    </ul>
+
+    <div class="m_block_btn addcategory">新建子类</div>
+</div>
+<script src="../config.js" charset="utf-8"></script>
+<script src="./secondCategory.js"></script>
+</body>
+</html>

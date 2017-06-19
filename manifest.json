@@ -215,7 +215,8 @@
 					"login/login.html",
 					"outlay/outlay.html",
 					"income/income.html",
-					"dailyReport/dailyReport.html"
+					"dailyReport/dailyReport.html",
+					"moreSetting/moreSetting.html"
 				],
 				"priority": 0
 			},
@@ -302,6 +303,75 @@
 					"dailyReport/dailyReport.css",
 					"css/mui.css",
 					"config.js",
+					"lib/fff.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"moreSetting/moreSetting.html": {
+				"resources": [
+					"moreSetting/moreSetting.css",
+					"moreSetting/moreSetting.js",
+					"widget/numKeyboard.js",
+					"lib/mui.picker.all.js",
+					"css/mui.picker.all.css",
+					"lib/moment.js",
+					"css/base.css",
+					"css/mui.css",
+					"js/commonAjax.js",
+					"lib/lib.js",
+					"config.js",
+					"host.js",
+					"js/common.js",
+					"lib/mui.min.js",
+					"img/1.jpg",
+					"lib/fff.js"
+				],
+				"refer": [
+					"login/login.html",
+					"firstCategory/firstCategory.html"
+				],
+				"priority": 0
+			},
+			"firstCategory/firstCategory.html": {
+				"resources": [
+					"firstCategory/firstCategory.js",
+					"firstCategory/firstCategory.css",
+					"css/base.css",
+					"css/mui.picker.all.css",
+					"css/mui.css",
+					"js/commonAjax.js",
+					"lib/mui.picker.all.js",
+					"lib/lib.js",
+					"config.js",
+					"host.js",
+					"js/common.js",
+					"lib/mui.min.js",
+					"img/1.jpg",
+					"lib/fff.js"
+				],
+				"refer": [
+					"secondCategory/secondCategory.html"
+				],
+				"priority": 0
+			},
+			"secondCategory/secondCategory.html": {
+				"resources": [
+					"widget/numKeyboard.js",
+					"secondCategory/secondCategory.css",
+					"lib/moment.js",
+					"secondCategory/secondCategory.js",
+					"css/base.css",
+					"css/mui.picker.all.css",
+					"css/mui.css",
+					"js/commonAjax.js",
+					"lib/mui.picker.all.js",
+					"lib/lib.js",
+					"config.js",
+					"host.js",
+					"js/common.js",
+					"lib/mui.min.js",
+					"img/1.jpg",
 					"lib/fff.js"
 				],
 				"refer": [],
