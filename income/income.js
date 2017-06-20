@@ -48,22 +48,27 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 		pageHeight = window.innerHeight;
 
 	mui.plusReady(function() {
+		bind_windowEvent();
+		getIncomeCategory();
+		bindResize();
+		initNumKeyBoard();
+		bind_outlay_type();
+		bind_outlay_kind();
+		bind_outlay_time();
+		bind_outlay_btn();
+
+	})
+		
+
+	function getIncomeCategory(){
 		commonAjax.incomecategory({}, function(res) {
-			$outlay_type_num.html(res.data[0].name+'|'+res.data[0].secondCategory[0].name);
+			$outlay_type_num.html(res.data[0].name+' | '+res.data[0].secondCategory[0].name||'未创建二级分类');
 			resultData.categoryId = res.data[0].secondCategory[0].value;
 			set_pickerData(res.data);
 
 		})
-	})
-		
-
-
-	bindResize();
-	initNumKeyBoard();
-	bind_outlay_type();
-	bind_outlay_kind();
-	bind_outlay_time();
-	bind_outlay_btn();
+	}
+	
 	function set_pickerData(data) {
 		var finalData = [],
 			tempData = {};
@@ -74,13 +79,22 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 			tempData.text = item.name;
 			item.secondCategory.forEach(function(subItem, subIndex) {
 				tempSubData = {};
-				tempSubData.text = subItem.name || '';
+				tempSubData.text = subItem.name ||'';
 				tempSubData.value = subItem.id || '';
 				tempData.children = tempData.children || [];
 				tempData.children.push(tempSubData);
 			})
+			if(item.secondCategory.length==0){
+				tempData.children = [
+					{
+						text:'未创建二级分类',
+						id:undefined
+					}
+				]
+			}
 			finalData.push(tempData);
 		})
+		console.log(finalData);
 		picker.setData(finalData);
 	}
 
@@ -239,6 +253,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 		})
 	}
 	function submitData(){
+
 		resultData.comment = $outlay_comment.html();
 		for(var i in resultData){
 			if(resultData[i]==null){
@@ -257,5 +272,11 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 			})	
 		}
 		
+	}
+
+	function bind_windowEvent(){
+		window.addEventListener('categoryUpdate',function(){
+			getIncomeCategory();
+		})
 	}
 })

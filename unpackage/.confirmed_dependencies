@@ -173,6 +173,9 @@
 			"lib/mui.min.js",
 			"img/1.jpg",
 			"lib/fff.js"
+		],
+		"refer": [
+			"login/login.html"
 		]
 	}
 }

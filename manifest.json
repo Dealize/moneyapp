@@ -374,7 +374,9 @@
 					"img/1.jpg",
 					"lib/fff.js"
 				],
-				"refer": [],
+				"refer": [
+					"login/login.html"
+				],
 				"priority": 0
 			}
 		},

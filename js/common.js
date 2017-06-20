@@ -26,7 +26,7 @@ define(['host'], function(host) {
 				type: 'post', //HTTP请求类型
 				success: function(data) {
 					that.ajaxLoading(false);
-					if(data.state == 0) {
+					if(data.state == 999) {
 						var loginWebview = plus.webview.getWebviewById('login');
 						if(loginWebview) {
 							that.showWebview({

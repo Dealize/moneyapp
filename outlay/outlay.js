@@ -48,6 +48,21 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 		pageHeight = window.innerHeight;
 
 	mui.plusReady(function() {
+		bind_windowEvent();
+		getCategory()
+		bindResize();
+		initNumKeyBoard();
+		bind_outlay_type();
+		bind_outlay_kind();
+		bind_outlay_time();
+		bind_outlay_btn();
+	})
+		
+
+
+	
+	
+	function getCategory(){
 		commonAjax.categoryList({}, function(res) {
 			console.log(res);
 			$outlay_type_num.html(res.data[0].name+'|'+res.data[0].secondCategory[0].name);
@@ -55,16 +70,8 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 			set_pickerData(res.data);
 
 		})
-	})
-		
-
-
-	bindResize();
-	initNumKeyBoard();
-	bind_outlay_type();
-	bind_outlay_kind();
-	bind_outlay_time();
-	bind_outlay_btn();
+	}
+	
 	function set_pickerData(data) {
 		var finalData = [],
 			tempData = {};
@@ -258,5 +265,10 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 			})	
 		}
 		
+	}
+	function bind_windowEvent(){
+		window.addEventListener('categoryUpdate',function(){
+			getCategory();
+		})
 	}
 })

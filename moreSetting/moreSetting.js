@@ -34,7 +34,11 @@ require(['FFF', 'host', 'common', 'commonAjax','numKeyboard'], function(FFF, hos
 		})
 		$moneyBtn.on('click',function(){
 			walletData['money'] = $moneyInput.html();
-			commonAjax.updateWallet(walletData,function(res){
+			commonAjax.updateWallet({
+				money:walletData.money,
+				name:walletData.name,
+				walletId:walletData.id
+			},function(res){
 				console.log(res);
 			})
 		})

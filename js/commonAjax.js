@@ -17,7 +17,10 @@ define(['common'],function (common) {
         	return common.commonAjax('category/get',data,callback);
         },
         categoryAdd:function(data,callback){
-        	return common.commonAjax('category/first/add',data,callback);
+            return common.commonAjax('category/first/add',data,callback);
+        },
+        categorySecondAdd:function(data,callback){
+            return common.commonAjax('category/second/add',data,callback);
         },
         categoryFirstUpdate:function(data,callback){
         	return common.commonAjax('category/first/update',data,callback);
@@ -30,7 +33,10 @@ define(['common'],function (common) {
         	return common.commonAjax('incomecategory/get',data,callback);
         },
         incomeCategoryAdd:function(data,callback){
-        	return common.commonAjax('incomecategory/first/add',data,callback)
+            return common.commonAjax('incomecategory/first/add',data,callback)
+        },
+        incomeCategorySecondAdd:function(data,callback){
+            return common.commonAjax('incomecategory/second/add',data,callback)
         },
         incomeCategoryFirstUpdate:function(data,callback){
         	return common.commonAjax('incomecategory/first/update',data,callback);
