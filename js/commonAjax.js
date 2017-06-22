@@ -9,10 +9,12 @@ define(['common'],function (common) {
         register:function (data,callback) {
             return common.commonAjax('myAuthor/register',data,callback);
         },
-        
-        
-        
-        
+
+
+
+        categoryAllList:function(data,callback){
+            return common.commonAjax('category/getcommon',data,callback);
+        },
         categoryList:function(data,callback){
         	return common.commonAjax('category/get',data,callback);
         },
@@ -28,7 +30,10 @@ define(['common'],function (common) {
         categorySecondUpdate:function(data,callback){
         	return common.commonAjax('category/second/update',data,callback);
         },
-        
+
+        incomecategoryAll:function(data,callback){
+            return common.commonAjax('incomecategory/getcommon',data,callback);
+        },
         incomecategory:function(data,callback){
         	return common.commonAjax('incomecategory/get',data,callback);
         },

@@ -63,7 +63,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 	
 	
 	function getCategory(){
-		commonAjax.categoryList({}, function(res) {
+		commonAjax.categoryAllList({}, function(res) {
 			console.log(res);
 			$outlay_type_num.html(res.data[0].name+'|'+res.data[0].secondCategory[0].name);
 			resultData.categoryId = res.data[0].secondCategory[0].value;

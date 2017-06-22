@@ -1,1 +1,54 @@
-null
+{
+  "dailyReport/dailyReport.html": {
+    "href": "dailyReport/dailyReport.html",
+    "resources": [
+      "fonts/mui.ttf"
+    ],
+    "priority": 0
+  },
+  "income/income.html": {
+    "href": "income/income.html",
+    "resources": [
+      "fonts/mui.ttf"
+    ],
+    "priority": 1
+  },
+  "outlay/outlay.html": {
+    "href": "outlay/outlay.html",
+    "resources": [
+      "fonts/mui.ttf"
+    ],
+    "priority": 2
+  },
+  "secondCategory/secondCategory.html": {
+    "href": "secondCategory/secondCategory.html",
+    "resources": [
+      "fonts/mui.ttf"
+    ],
+    "priority": 3
+  },
+  "firstCategory/firstCategory.html": {
+    "href": "firstCategory/firstCategory.html",
+    "resources": [
+      "fonts/mui.ttf"
+    ],
+    "refer": [],
+    "priority": 3
+  },
+  "moreSetting/moreSetting.html": {
+    "href": "moreSetting/moreSetting.html",
+    "resources": [
+      "fonts/mui.ttf"
+    ],
+    "refer": [],
+    "priority": 3
+  },
+  "index/index.html": {
+    "href": "index/index.html",
+    "resources": [
+      "fonts/mui.ttf"
+    ],
+    "refer": [],
+    "priority": 0
+  }
+}

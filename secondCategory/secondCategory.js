@@ -85,8 +85,8 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
         }else if(categoryType=='incomeCategory'){
             commonAjax.incomecategory({},function(res){
                 categoryList = res.data;
-                categoryData = categoryList[categoryIndex].secondCategory;
-                renderDomByData(categoryData);
+                categoryData = categoryList[categoryIndex];
+                renderDomByData(categoryData.secondCategory);
                 callback && callback();
 
             })

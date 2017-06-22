@@ -61,7 +61,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 		
 
 	function getIncomeCategory(){
-		commonAjax.incomecategory({}, function(res) {
+		commonAjax.incomecategoryAll({}, function(res) {
 			$outlay_type_num.html(res.data[0].name+' | '+res.data[0].secondCategory[0].name||'未创建二级分类');
 			resultData.categoryId = res.data[0].secondCategory[0].value;
 			set_pickerData(res.data);
