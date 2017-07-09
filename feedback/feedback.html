@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+      <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+                dpr = window.top === window.self ? dpr : 1, //被iframe引用时，禁止缩放
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+            docEl.dataset.dpr = dpr;
+            var recalc = function () {
+                var width = docEl.clientWidth;
+                if (width / dpr > 750) {
+                    width = 750 * dpr;
+                }
+                docEl.dataset.percent = 100;
+                docEl.style.fontSize = width / 10 + 'px';
+            };
+            recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+        })(document, window);
+    </script>
+    <script src="../lib/mui.min.js"></script>
+    <script src="../lib/lib.js"></script>
+    <script src="../lib/fff.js"></script>
+    <link rel="stylesheet" href="../css/mui.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="./feedback.css">
+</head>
+<body>
+<div class="title">
+    <div class="title_left mui-action-back"> < </div>
+    <div class="title_center">反馈</div>
+    <div class="title_right"></div>
+</div>
+<div class="body">
+   <div class="m_inputGroup feedBack_title">
+        <div class="m_inputGroup_container">
+            <label for="title">反馈主题:</label>
+            <input id="title"/>
+        </div>
+    </div>
+     <div class="m_inputGroup feedBack_user">
+        <div class="m_inputGroup_container">
+            <label for="title">联系方式:</label>
+            <input id="title" placeholder="要道谢反馈时候用"/>
+        </div>
+    </div>
+    <div class="m_inputGroup feedBack_type">
+        <div class="m_inputGroup_container">
+            <label for="type">反馈类型:</label>
+            <select id="type" >
+            	<option value="1">功能建议</option>
+            	<option value="2">bug反馈</option>
+            	<option value="3">单纯吐槽</option>
+            </select>
+        </div>
+    </div>
+    <div class="m_inputGroup feedBack_content">
+    	<span>详情</span>
+		<textarea name="" rows="13" cols=""></textarea>
+    </div>
+
+    <div class="m_btnGroup loginBtns">
+        <div class="m_btnGroup_container">
+            <div class="m_btnGroup_btn feedBack_submit">提交</div>
+        </div>
+    </div>
+</div>
+<script src="../config.js" charset="utf-8"></script>
+<script src="./feedback.js"></script>
+</body>
+</html>
