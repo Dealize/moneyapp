@@ -16,6 +16,9 @@
 		"email": "",/*开发者邮箱地址*/
 		"url": "http://www.dcloud.io"
 	},
+	"error":{
+		"url":"error.html"
+	},
 	"permissions": {
 		"Accelerometer": {
             "description": "访问加速度感应器"
@@ -124,7 +127,7 @@
 				"keystore": "",/*Android应用打包使用的密钥库文件*/
 				"password": "",/*Android应用打包使用密钥库中证书的密码*/
 				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
-				"permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.SEND_SMS\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.WRITE_SMS\"/>","<uses-permission android:name=\"android.permission.READ_SMS\"/>"]
+				"permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.SEND_SMS\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.WRITE_SMS\"/>","<uses-permission android:name=\"android.permission.READ_SMS\"/>"]
 			},
 			"orientation": ["portrait-primary"],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
 			"icons": {
@@ -191,223 +194,241 @@
 		}
 	},
 	"dependencies": {
-	  "pages": {
-	    "index/index.html": {
-	      "resources": [
-	        "css/base.css",
-	        "js/mui.min.js",
-	        "img/1.jpg",
-	        "index/index.js",
-	        "js/lib.js",
-	        "css/mui.css",
-	        "js/fff.js",
-	        "host.js",
-	        "js/commonAjax.js",
-	        "js/common.js",
-	        "lib/mui.min.js",
-	        "lib/lib.js",
-	        "config.js",
-	        "index/index.css",
-	        "lib/fff.js",
-	        "img/loading.gif",
-	        "fonts/mui.ttf"
-	      ],
-	      "refer": [
-	        "login/login.html",
-	        "outlay/outlay.html",
-	        "income/income.html",
-	        "dailyReport/dailyReport.html",
-	        "moreSetting/moreSetting.html"
-	      ],
-	      "priority": 0
-	    },
-	    "login/login.html": {
-	      "resources": [
-	        "login/login.js",
-	        "css/base.css",
-	        "js/fff.js",
-	        "js/mui.min.js",
-	        "img/1.jpg",
-	        "js/lib.js",
-	        "css/mui.css",
-	        "host.js",
-	        "js/common.js",
-	        "lib/mui.min.js",
-	        "lib/lib.js",
-	        "config.js",
-	        "lib/fff.js",
-	        "js/commonAjax.js",
-	        "img/loading.gif",
-	        "login/login.css"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "outlay/outlay.html": {
-	      "resources": [
-	        "outlay/outlay.js",
-	        "outlay/outlay.css",
-	        "host.js",
-	        "js/commonAjax.js",
-	        "js/common.js",
-	        "css/mui.css",
-	        "lib/mui.picker.all.js",
-	        "css/mui.picker.all.css",
-	        "css/base.css",
-	        "lib/lib.js",
-	        "config.js",
-	        "lib/mui.min.js",
-	        "img/1.jpg",
-	        "lib/fff.js",
-	        "widget/numKeyboard.js",
-	        "img/loading.gif",
-	        "lib/moment.js",
-	        "fonts/mui.ttf"
-	      ],
-	      "refer": [
-	        "login/login.html"
-	      ],
-	      "priority": 0
-	    },
-	    "income/income.html": {
-	      "resources": [
-	        "income/income.js",
-	        "income/income.css",
-	        "host.js",
-	        "js/commonAjax.js",
-	        "js/common.js",
-	        "css/mui.css",
-	        "css/base.css",
-	        "lib/mui.min.js",
-	        "img/1.jpg",
-	        "lib/lib.js",
-	        "config.js",
-	        "lib/fff.js",
-	        "lib/mui.picker.all.js",
-	        "css/mui.picker.all.css",
-	        "widget/numKeyboard.js",
-	        "lib/moment.js",
-	        "fonts/mui.ttf"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "dailyReport/dailyReport.html": {
-	      "resources": [
-	        "host.js",
-	        "js/commonAjax.js",
-	        "css/base.css",
-	        "js/common.js",
-	        "lib/mui.min.js",
-	        "img/1.jpg",
-	        "lib/lib.js",
-	        "lib/moment.js",
-	        "dailyReport/dailyReport.js",
-	        "dailyReport/dailyReport.css",
-	        "css/mui.css",
-	        "config.js",
-	        "lib/fff.js",
-	        "fonts/mui.ttf"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "moreSetting/moreSetting.html": {
-	      "resources": [
-	        "moreSetting/moreSetting.css",
-	        "moreSetting/moreSetting.js",
-	        "widget/numKeyboard.js",
-	        "lib/mui.picker.all.js",
-	        "css/mui.picker.all.css",
-	        "lib/moment.js",
-	        "css/base.css",
-	        "css/mui.css",
-	        "js/commonAjax.js",
-	        "lib/lib.js",
-	        "config.js",
-	        "host.js",
-	        "js/common.js",
-	        "lib/mui.min.js",
-	        "img/1.jpg",
-	        "lib/fff.js",
-	        "fonts/mui.ttf"
-	      ],
-	      "refer": [
-	        "login/login.html",
-	        "firstCategory/firstCategory.html"
-	      ],
-	      "priority": 0
-	    },
-	    "firstCategory/firstCategory.html": {
-	      "resources": [
-	        "firstCategory/firstCategory.js",
-	        "firstCategory/firstCategory.css",
-	        "css/base.css",
-	        "css/mui.picker.all.css",
-	        "css/mui.css",
-	        "js/commonAjax.js",
-	        "lib/mui.picker.all.js",
-	        "lib/lib.js",
-	        "config.js",
-	        "host.js",
-	        "js/common.js",
-	        "lib/mui.min.js",
-	        "img/1.jpg",
-	        "lib/fff.js",
-	        "fonts/mui.ttf"
-	      ],
-	      "refer": [
-	        "secondCategory/secondCategory.html"
-	      ],
-	      "priority": 0
-	    },
-	    "secondCategory/secondCategory.html": {
-	      "resources": [
-	        "widget/numKeyboard.js",
-	        "secondCategory/secondCategory.css",
-	        "lib/moment.js",
-	        "secondCategory/secondCategory.js",
-	        "css/base.css",
-	        "css/mui.picker.all.css",
-	        "css/mui.css",
-	        "js/commonAjax.js",
-	        "lib/mui.picker.all.js",
-	        "lib/lib.js",
-	        "config.js",
-	        "host.js",
-	        "js/common.js",
-	        "lib/mui.min.js",
-	        "img/1.jpg",
-	        "lib/fff.js",
-	        "fonts/mui.ttf"
-	      ],
-	      "refer": [
-	        "login/login.html"
-	      ],
-	      "priority": 0
-	    }
-	  },
-	  "idle": {
-	    "resources": [
-	      "index/index.less",
-	      "moreSetting/moreSetting.less",
-	      "css/base.less",
-	      "secondCategory/secondCategory.less",
-	      "income/num.html",
-	      "index2.html",
-	      "css/gmui.css",
-	      "income/income.less",
-	      "index.html",
-	      "css/widget.css",
-	      "css/widget.less",
-	      "css/mui.min.css",
-	      "dailyReport/dailyReport.less",
-	      "outlay/outlay.less",
-	      "lib/gmui.js",
-	      "lib/mui.js",
-	      "firstCategory/firstCategory.less",
-	      "outlay/num.html"
-	    ]
-	  }
+		"pages": {
+			"index/index.html": {
+				"resources": [
+					"css/base.css",
+					"js/mui.min.js",
+					"img/1.jpg",
+					"index/index.js",
+					"js/lib.js",
+					"css/mui.css",
+					"js/fff.js",
+					"host.js",
+					"js/commonAjax.js",
+					"js/common.js",
+					"lib/mui.min.js",
+					"lib/lib.js",
+					"config.js",
+					"index/index.css",
+					"lib/fff.js",
+					"img/loading.gif",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"login/login.html",
+					"outlay/outlay.html",
+					"income/income.html",
+					"dailyReport/dailyReport.html",
+					"moreSetting/moreSetting.html"
+				],
+				"priority": 0
+			},
+			"login/login.html": {
+				"resources": [
+					"login/login.js",
+					"css/base.css",
+					"js/fff.js",
+					"js/mui.min.js",
+					"img/1.jpg",
+					"js/lib.js",
+					"css/mui.css",
+					"host.js",
+					"js/common.js",
+					"lib/mui.min.js",
+					"lib/lib.js",
+					"config.js",
+					"lib/fff.js",
+					"js/commonAjax.js",
+					"img/loading.gif",
+					"login/login.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"outlay/outlay.html": {
+				"resources": [
+					"outlay/outlay.js",
+					"outlay/outlay.css",
+					"host.js",
+					"js/commonAjax.js",
+					"js/common.js",
+					"css/mui.css",
+					"lib/mui.picker.all.js",
+					"css/mui.picker.all.css",
+					"css/base.css",
+					"lib/lib.js",
+					"config.js",
+					"lib/mui.min.js",
+					"img/1.jpg",
+					"lib/fff.js",
+					"widget/numKeyboard.js",
+					"img/loading.gif",
+					"lib/moment.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"login/login.html"
+				],
+				"priority": 0
+			},
+			"income/income.html": {
+				"resources": [
+					"income/income.js",
+					"income/income.css",
+					"host.js",
+					"js/commonAjax.js",
+					"js/common.js",
+					"css/mui.css",
+					"css/base.css",
+					"lib/mui.min.js",
+					"img/1.jpg",
+					"lib/lib.js",
+					"config.js",
+					"lib/fff.js",
+					"lib/mui.picker.all.js",
+					"css/mui.picker.all.css",
+					"widget/numKeyboard.js",
+					"lib/moment.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"dailyReport/dailyReport.html": {
+				"resources": [
+					"host.js",
+					"js/commonAjax.js",
+					"css/base.css",
+					"js/common.js",
+					"lib/mui.min.js",
+					"img/1.jpg",
+					"lib/lib.js",
+					"lib/moment.js",
+					"dailyReport/dailyReport.js",
+					"dailyReport/dailyReport.css",
+					"css/mui.css",
+					"config.js",
+					"lib/fff.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"moreSetting/moreSetting.html": {
+				"resources": [
+					"moreSetting/moreSetting.css",
+					"moreSetting/moreSetting.js",
+					"widget/numKeyboard.js",
+					"lib/mui.picker.all.js",
+					"css/mui.picker.all.css",
+					"lib/moment.js",
+					"css/base.css",
+					"css/mui.css",
+					"js/commonAjax.js",
+					"lib/lib.js",
+					"config.js",
+					"host.js",
+					"js/common.js",
+					"lib/mui.min.js",
+					"img/1.jpg",
+					"lib/fff.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"login/login.html",
+					"firstCategory/firstCategory.html"
+				],
+				"priority": 0
+			},
+			"firstCategory/firstCategory.html": {
+				"resources": [
+					"firstCategory/firstCategory.js",
+					"firstCategory/firstCategory.css",
+					"css/base.css",
+					"css/mui.picker.all.css",
+					"css/mui.css",
+					"js/commonAjax.js",
+					"lib/mui.picker.all.js",
+					"lib/lib.js",
+					"config.js",
+					"host.js",
+					"js/common.js",
+					"lib/mui.min.js",
+					"img/1.jpg",
+					"lib/fff.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"secondCategory/secondCategory.html"
+				],
+				"priority": 0
+			},
+			"secondCategory/secondCategory.html": {
+				"resources": [
+					"widget/numKeyboard.js",
+					"secondCategory/secondCategory.css",
+					"lib/moment.js",
+					"secondCategory/secondCategory.js",
+					"css/base.css",
+					"css/mui.picker.all.css",
+					"css/mui.css",
+					"js/commonAjax.js",
+					"lib/mui.picker.all.js",
+					"lib/lib.js",
+					"config.js",
+					"host.js",
+					"js/common.js",
+					"lib/mui.min.js",
+					"img/1.jpg",
+					"lib/fff.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"login/login.html"
+				],
+				"priority": 0
+			},
+			"feedback/feedback.html": {
+				"resources": [
+					"host.js",
+					"js/commonAjax.js",
+					"css/base.css",
+					"js/common.js",
+					"feedback/feedback.js",
+					"lib/mui.min.js",
+					"img/1.jpg",
+					"lib/lib.js",
+					"css/mui.css",
+					"config.js",
+					"feedback/feedback.css",
+					"lib/fff.js"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"index/index.less",
+				"moreSetting/moreSetting.less",
+				"css/base.less",
+				"secondCategory/secondCategory.less",
+				"income/num.html",
+				"index2.html",
+				"css/gmui.css",
+				"income/income.less",
+				"index.html",
+				"css/widget.css",
+				"css/widget.less",
+				"css/mui.min.css",
+				"dailyReport/dailyReport.less",
+				"outlay/outlay.less",
+				"lib/gmui.js",
+				"lib/mui.js",
+				"firstCategory/firstCategory.less",
+				"outlay/num.html"
+			]
+		}
 	}
 }

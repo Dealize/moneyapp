@@ -4,7 +4,7 @@ require(['FFF', 'host', 'common', 'commonAjax','numKeyboard'], function(FFF, hos
 		$moneyBtn = $('.setMoneyBtn'),
 		$categoryBtn = $('.setCategory'),
 		$incomeCategoryBtn = $('.setIncomeCategory'),
-		
+		$feedBackBtn = $('.feedBack'),
 		
 		
 		$logoutBtn = $('.logoutBtn'),
@@ -24,6 +24,7 @@ require(['FFF', 'host', 'common', 'commonAjax','numKeyboard'], function(FFF, hos
 		bind_logout();
         initNumKeyBoard();
         bind_categoryBtn();
+        bind_feedBack();
 	})
 		
 	function bind_get_wallet(){
@@ -119,6 +120,12 @@ require(['FFF', 'host', 'common', 'commonAjax','numKeyboard'], function(FFF, hos
 			})
 		})
 	}
-	
-
+	function bind_feedBack(){
+        $feedBackBtn.on('click',function(){
+        	common.showWebview({
+        		id:'feedBack',
+        		url:'../feedBack/feedBack.html'
+        	})
+        })
+	}
 })

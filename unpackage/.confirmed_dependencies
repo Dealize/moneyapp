@@ -177,5 +177,21 @@
     "refer": [
       "login/login.html"
     ]
+  },
+  "feedback/feedback.html": {
+    "resources": [
+      "host.js",
+      "js/commonAjax.js",
+      "css/base.css",
+      "js/common.js",
+      "feedback/feedback.js",
+      "lib/mui.min.js",
+      "img/1.jpg",
+      "lib/lib.js",
+      "css/mui.css",
+      "config.js",
+      "feedback/feedback.css",
+      "lib/fff.js"
+    ]
   }
 }

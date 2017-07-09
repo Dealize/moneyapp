@@ -5,9 +5,16 @@ require(['FFF', 'host', 'common', 'commonAjax','moment'], function(FFF, host, co
 	});
 
 	mui.plusReady(function() {
+        getAjaxData();
 	})
 	var  todayDate = moment().format('YYYY-MM-DD'),
 		todayDay = moment().format('e');
 	console.log(todayDate,todayDay);
 
+	function getAjaxData () {
+		commonAjax.reportDaily({
+		},function (res) {
+			console.log(res);
+        })
+    }
 })

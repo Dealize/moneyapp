@@ -1,72 +1,75 @@
 define(['common'],function (common) {
     var exports = {
-        login:function (data, callback) {
-            return common.commonAjax('myAuthor/login',data,callback);
+        login:function (data, callback, isHideMask) {
+            return common.commonAjax('myAuthor/login',data,callback, isHideMask);
         },
-        logout:function (data, callback) {
-            return common.commonAjax('myAuthor/logout',data,callback);
+        logout:function (data, callback, isHideMask) {
+            return common.commonAjax('myAuthor/logout',data,callback, isHideMask);
         },
-        register:function (data,callback) {
-            return common.commonAjax('myAuthor/register',data,callback);
-        },
-
-
-
-        categoryAllList:function(data,callback){
-            return common.commonAjax('category/getcommon',data,callback);
-        },
-        categoryList:function(data,callback){
-        	return common.commonAjax('category/get',data,callback);
-        },
-        categoryAdd:function(data,callback){
-            return common.commonAjax('category/first/add',data,callback);
-        },
-        categorySecondAdd:function(data,callback){
-            return common.commonAjax('category/second/add',data,callback);
-        },
-        categoryFirstUpdate:function(data,callback){
-        	return common.commonAjax('category/first/update',data,callback);
-        },
-        categorySecondUpdate:function(data,callback){
-        	return common.commonAjax('category/second/update',data,callback);
+        register:function (data,callback, isHideMask) {
+            return common.commonAjax('myAuthor/register',data,callback, isHideMask);
         },
 
-        incomecategoryAll:function(data,callback){
-            return common.commonAjax('incomecategory/getcommon',data,callback);
+
+
+        categoryAllList:function(data,callback, isHideMask){
+            return common.commonAjax('category/getcommon',data,callback, isHideMask);
         },
-        incomecategory:function(data,callback){
-        	return common.commonAjax('incomecategory/get',data,callback);
+        categoryList:function(data,callback, isHideMask){
+        	return common.commonAjax('category/get',data,callback, isHideMask);
         },
-        incomeCategoryAdd:function(data,callback){
-            return common.commonAjax('incomecategory/first/add',data,callback)
+        categoryAdd:function(data,callback, isHideMask){
+            return common.commonAjax('category/first/add',data,callback, isHideMask);
         },
-        incomeCategorySecondAdd:function(data,callback){
-            return common.commonAjax('incomecategory/second/add',data,callback)
+        categorySecondAdd:function(data,callback, isHideMask){
+            return common.commonAjax('category/second/add',data,callback, isHideMask);
         },
-        incomeCategoryFirstUpdate:function(data,callback){
-        	return common.commonAjax('incomecategory/first/update',data,callback);
+        categoryFirstUpdate:function(data,callback, isHideMask){
+        	return common.commonAjax('category/first/update',data,callback, isHideMask);
         },
-        incomeCategorySecondUpdate:function(data,callback){
-        	return common.commonAjax('incomecategory/second/update',data,callback);
+        categorySecondUpdate:function(data,callback, isHideMask){
+        	return common.commonAjax('category/second/update',data,callback, isHideMask);
+        },
+
+        incomecategoryAll:function(data,callback, isHideMask){
+            return common.commonAjax('incomecategory/getcommon',data,callback, isHideMask);
+        },
+        incomecategory:function(data,callback, isHideMask){
+        	return common.commonAjax('incomecategory/get',data,callback, isHideMask);
+        },
+        incomeCategoryAdd:function(data,callback, isHideMask){
+            return common.commonAjax('incomecategory/first/add',data,callback, isHideMask)
+        },
+        incomeCategorySecondAdd:function(data,callback, isHideMask){
+            return common.commonAjax('incomecategory/second/add',data,callback, isHideMask)
+        },
+        incomeCategoryFirstUpdate:function(data,callback, isHideMask){
+        	return common.commonAjax('incomecategory/first/update',data,callback, isHideMask);
+        },
+        incomeCategorySecondUpdate:function(data,callback, isHideMask){
+        	return common.commonAjax('incomecategory/second/update',data,callback, isHideMask);
         },
         
         
         
         
-        billAdd:function(data,callback){
-        	return common.commonAjax('bill/add',data,callback);
+        billAdd:function(data,callback, isHideMask){
+        	return common.commonAjax('bill/add',data,callback, isHideMask);
         },
-        reportDaily:function(data,callback){
+        reportDaily:function(data,callback, isHideMask){
         	return common.commonAjax('report/daily',data,callback,true);
         },
-        reportIndex:function(data,callback){
+        reportIndex:function(data,callback, isHideMask){
             return common.commonAjax('report/index',data,callback,true);
         },
-        getWalletList:function(data,callback){
-            return common.commonAjax('wallet/list',data,callback);
+        getWalletList:function(data,callback, isHideMask){
+            return common.commonAjax('wallet/list',data,callback, isHideMask);
         },
-        updateWallet:function(data,callback){
-        	return common.commonAjax('wallet/update',data,callback);
+        updateWallet:function(data,callback, isHideMask){
+        	return common.commonAjax('wallet/update',data,callback, isHideMask);
+        },
+        feedBackAdd:function(data,callback,isHideMask){
+        	return common.commonAjax('feedback/add',data,callback,isHideMask);
         }
     }
     return exports;

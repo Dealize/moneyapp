@@ -11,14 +11,9 @@ define([],function () {
         	api:'http://www.moneybeta.dofyou.win/'
         }
     }
-    var enviroment = 'beta';
+    var enviroment = 'dev';
     console.log(urlObj[enviroment].api);
     return urlObj[enviroment];
 })
 
 
-// (function () {
-//     return host = {
-//         'dev':'.'
-//     };
-// })()

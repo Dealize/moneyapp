@@ -66,10 +66,10 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 		commonAjax.categoryAllList({}, function(res) {
 			console.log(res);
 			$outlay_type_num.html(res.data[0].name+'|'+res.data[0].secondCategory[0].name);
-			resultData.categoryId = res.data[0].secondCategory[0].value;
+			resultData.categoryId = res.data[0].secondCategory[0].id;
 			set_pickerData(res.data);
 
-		})
+		},true)
 	}
 	
 	function set_pickerData(data) {
@@ -193,6 +193,10 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 
 	function bind_outlay_time() {
 		$outlay_time2.hide();
+        $outlay_time_data[0].valueAsDate = new Date();
+        $outlay_time2_data[0].valueAsDate = new Date();
+        resultData.beginTime = moment().format('YYYY-MM-DD');
+        resultData.endTime = resultData.beginTime;
 		$outlay_time_data.on('input',function(e){
 			var val = e.target.value;
 			if(val==''){
@@ -222,7 +226,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 						validToggle = false;
 					}else{
 						console.log(disDay);
-						disDay = Math.abs(disDay/1000/3600/24);
+						disDay = Math.abs(disDay/1000/3600/24)+1;
 						$outlay_time2_days.html('持续'+disDay+'天');
 						validToggle = true;
 					}
@@ -235,13 +239,11 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 	}
 	function bind_outlay_btn(){
 		$outlay_btn1.on('click',function(){
-			console.log(1111);
 			resultData.isWorth = 1;
-			submitData();
+            resultData.isWorth = 1;
+            submitData();
 		})
 		$outlay_btn2.on('click',function(){
-			console.log(2222);
-			
 			resultData.isWorth = 2;
 			submitData();
 		})
@@ -256,10 +258,14 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 		}
 		if(!validToggle){
 			alert('有数据未填写正确，请检查');
+			return;
 		}
+        if(resultData.money==0){
+            alert('金额为0，请重填');
+            return;
+        }
 		if(confirm('是否要保存？')){
 			commonAjax.billAdd(resultData,function(res){
-				console.log(res);
 				alert('保存成功。')
 				mui.back();
 			})	

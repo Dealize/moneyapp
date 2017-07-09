@@ -24,6 +24,9 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 
 	mui.plusReady(function() {
 		currentWebview = plus.webview.currentWebview();
+		currentWebview.setStyle({
+			'render':'always'
+		})
         getData();
         bind_incone();
         bind_outlay();
@@ -35,12 +38,17 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 	function bind_incone() {
 		$dailyBenefit.on('click', function() {
 			common.showWebview({
-				id: 'income'
+				id: 'income',
+				
 			})
 		})
 		var incomeWebView = mui.preload({
 			url: '../income/income.html',
-			id: 'income'
+			id: 'income',
+			styles:{
+					'render':'always',
+					'background':'transparent'
+				}
 		});
 		incomeWebView.addEventListener('hide', function(e) {
 			incomeWebView.reload();
@@ -56,7 +64,11 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 		})
 		var outlayWebView = mui.preload({
 			url: '../outlay/outlay.html',
-			id: 'outlay'
+			id: 'outlay',
+			styles:{
+					'render':'always',
+					'background':'transparent'
+				}
 		});
 		outlayWebView.addEventListener('hide', function(e) {
 			console.log(e);
@@ -66,13 +78,21 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 	}
 
 	function getData() {
+		var  _storageData = JSON.parse(plus.storage.getItem('indexData') || '{}'),
+			costNum = _storageData.costNum || 0,
+			benefitNum = _storageData.benefitNum || 0;
+		$dailyCost_Num.html(costNum);
+		$dailyBenefit_Num.html(benefitNum);	
 		commonAjax.reportIndex({}, function(res) {
-			console.log(res);
-			var costNum = res.data.indexInfo.outlayData_money;
-			var benefitNum = res.data.indexInfo.incomeData_money;
+			costNum = res.data.indexInfo.outlayData_money;
+			benefitNum = res.data.indexInfo.incomeData_money;
+			plus.storage.setItem('indexData',JSON.stringify({
+                costNum:costNum,
+                benefitNum:benefitNum
+            }))
 			$dailyCost_Num.html(costNum);
 			$dailyBenefit_Num.html(benefitNum);
-		})
+		},true);
 	}
 
 	function bind_moreSetting(){
@@ -89,14 +109,14 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 	function countdown() {
 		var sevenAclock = new Date(),
 			timeFlag = 1,
-			timeSplit = '';
-		sevenAclock.setHours(23);
-		sevenAclock.setMinutes(23);
+			timeSplit = ':';
+		sevenAclock.setHours(19);
+		sevenAclock.setMinutes(00);
 		sevenAclock.setSeconds(00);
 		var disHour, disMin, disSec, disTime;
 		var timer = setInterval(function() {
 			if(timeFlag % 2 == 0) {
-				timeSplit = ' ';
+				timeSplit = ':';
 			} else {
 				timeSplit = ':';
 				var nowTime = new Date();

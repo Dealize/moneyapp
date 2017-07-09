@@ -11,6 +11,8 @@ require(['FFF','host','common','commonAjax'],function (FFF,host,common,commonAja
 
     function setStateIsLogin(){
         $password2Container.hide();
+      	$loginBtn.html('登录');
+        $registerBtn.html('注册');
         $loginBtn.unbind().bind('click',function () {
             var emailVal = $emailInput.val(),
                 passwordVal = $password.val();
@@ -71,14 +73,12 @@ require(['FFF','host','common','commonAjax'],function (FFF,host,common,commonAja
             password:$password.val()
         },function (res) {
             if(res.state==1){
-                mui.back();
                 var webViews = plus.webview.all();
                 webViews.forEach(function(item){
                     item.reload();
                 })
-                common.showWebview({
-                    id:'index'
-                })
+               
+                plus.webview.close(plus.webview.currentWebview().id)
             }else{
                 alert(res.msg);
             }
@@ -89,6 +89,7 @@ require(['FFF','host','common','commonAjax'],function (FFF,host,common,commonAja
     mui.init();
     mui.plusReady(function () {
         setStateIsLogin();
+    
     })
 })
 
