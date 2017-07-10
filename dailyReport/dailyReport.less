@@ -43,6 +43,7 @@
       min-height:4rem;
       flex-direction: column;
       padding:0.8rem 0.2rem;
+      padding-bottom:0.2rem;
       &>div{
         width:100%;
         display: flex;
@@ -52,7 +53,7 @@
       .outlayProgress{
         text-align: center;
         &>div{
-          flex-grow:1;
+          flex-grow:0;
           height:30px;
           line-height:30px;
         }
@@ -67,9 +68,8 @@
         }
       }
       .income{
-        border-top: 1px solid rgba(0,0,0,0.1);
-        margin-top: 0.2rem;
-        padding-top: 0.2rem;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        margin-bottom: 0.2rem;
       }
     }
   }

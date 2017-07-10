@@ -20,6 +20,8 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 		$timeInfoTime = $timeInfo.find('.dailyInfo_Num'),
 		$timeInfoText = $timeInfo.find('.dailyInfo_title'),
 		$moreSettingBtn = $('.moreSetting'),
+		$finishBtn = $('.finishBtn'),
+		$finishLogin = $('.firstLogin'),
 		currentWebview;
 
 	mui.plusReady(function() {
@@ -27,6 +29,7 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 		currentWebview.setStyle({
 			'render':'always'
 		})
+		bindDomEvent();
         getData();
         bind_incone();
         bind_outlay();
@@ -104,13 +107,25 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 		})
 
 	}
-
+	function bindDomEvent(){
+		var isRead = plus.storage.getItem('isReaded');
+		if(isRead=='true'){
+			 $finishLogin.remove();	
+		}else{
+			$finishLogin.show()
+			$finishBtn.on('click',function () {
+			 	 plus.storage.setItem('isReaded','true');
+				 $finishLogin.remove();
+        	})	
+		}
+		
+	}
 
 	function countdown() {
 		var sevenAclock = new Date(),
 			timeFlag = 1,
 			timeSplit = ':';
-		sevenAclock.setHours(19);
+		sevenAclock.setHours(07);
 		sevenAclock.setMinutes(00);
 		sevenAclock.setSeconds(00);
 		var disHour, disMin, disSec, disTime;

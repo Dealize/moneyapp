@@ -48,6 +48,7 @@
   min-height: 4rem;
   flex-direction: column;
   padding: 0.8rem 0.2rem;
+  padding-bottom: 0.2rem;
 }
 .dailyReport .dailyOutlay .m_card_body > div {
   width: 100%;
@@ -59,7 +60,7 @@
   text-align: center;
 }
 .dailyReport .dailyOutlay .m_card_body .outlayProgress > div {
-  flex-grow: 1;
+  flex-grow: 0;
   height: 30px;
   line-height: 30px;
 }
@@ -72,9 +73,8 @@
   background: #995444;
 }
 .dailyReport .dailyOutlay .m_card_body .income {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 0.2rem;
-  padding-top: 0.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.2rem;
 }
 .dailyReport .dailyCost .m_card_body {
   min-height: 4rem;

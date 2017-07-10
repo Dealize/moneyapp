@@ -78,7 +78,12 @@
   position: relative;
   top: -0.4rem;
   width: 3rem;
+  border: 1px solid #fff !important;
 }
 .outlay_time2 {
   display: none;
+}
+.m_inputGroup {
+  width: initial;
+  margin: 1rem;
 }

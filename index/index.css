@@ -1,6 +1,29 @@
 .body {
   overflow: hidden;
 }
+.firstLogin {
+  z-index: 9;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: #000000;
+  color: #ccc;
+  font-size: 15px;
+}
+.firstLogin .title {
+  font-size: 24px;
+}
+.firstLogin_container {
+  margin: 1rem 0.5rem;
+  line-height: 28px;
+  color: #aaa;
+}
+.finishBtn {
+  margin-bottom: 1rem;
+}
 .index {
   height: 100vh;
   display: flex;

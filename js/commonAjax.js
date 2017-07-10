@@ -57,7 +57,7 @@ define(['common'],function (common) {
         	return common.commonAjax('bill/add',data,callback, isHideMask);
         },
         reportDaily:function(data,callback, isHideMask){
-        	return common.commonAjax('report/daily',data,callback,true);
+        	return common.commonAjax('report/daily',data,callback,isHideMask);
         },
         reportIndex:function(data,callback, isHideMask){
             return common.commonAjax('report/index',data,callback,true);

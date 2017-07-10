@@ -41,11 +41,12 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 		$outlay_time_data = $outlay_time.find('.outlay_time_num'),
 		$outlay_time2_data = $outlay_time2.find('.outlay_time_num'),
 		$outlay_time2_days = $outlay_time2.find('.outlay_time_days'),
-		$outlay_comment = $('.outlay_comment'),
+		$outlay_comment = $('.outlay_comment input'),
 		$outlay_btn1 = $('.outlay_btn1'),
 		$outlay_btn2 = $('.outlay_btn2'),
 		picker = null,
-		pageHeight = window.innerHeight;
+		pageHeight = window.innerHeight,
+		categoryText = '';
 
 	mui.plusReady(function() {
 		bind_windowEvent();
@@ -67,6 +68,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 			console.log(res);
 			$outlay_type_num.html(res.data[0].name+'|'+res.data[0].secondCategory[0].name);
 			resultData.categoryId = res.data[0].secondCategory[0].id;
+            categoryText = res.data[0].secondCategory[0].name;
 			set_pickerData(res.data);
 
 		},true)
@@ -157,6 +159,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 				$outlay_type_num.html(selectItems[0].text + ' | ' + selectItems[1].text);
 				console.log(selectItems[1]);
 				resultData.categoryId = selectItems[1].value;
+				categoryText = selectItems[1].text;
 			})
 		})
 	}
@@ -249,7 +252,10 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 		})
 	}
 	function submitData(){
-		resultData.comment = $outlay_comment.html();
+		resultData.comment = $outlay_comment.val();
+		if(resultData.comment==""){
+			resultData.comment = categoryText;
+		}
 		for(var i in resultData){
 			if(resultData[i]==null){
 				alert(i+'不能为空');
