@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../lib/mui.min.js"></script>
+    <script src="../lib/lib.js"></script>
+    <script src="../lib/fff.js"></script>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+                dpr = window.top === window.self ? dpr : 1, //被iframe引用时，禁止缩放
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+            docEl.dataset.dpr = dpr;
+            var recalc = function () {
+                var width = docEl.clientWidth;
+                if (width / dpr > 750) {
+                    width = 750 * dpr;
+                }
+                docEl.dataset.percent = 100;
+                docEl.style.fontSize = width / 10 + 'px';
+            };
+            recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+        })(document, window);
+    </script>
+    <link rel="stylesheet" href="../css/mui.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div class="bg">
+    <div class="bgCover"></div>
+</div>
+<div class="body">
+	<div class="firstLogin">
+        <div class="title">
+            <div class="title_center">应用理念与使用说明</div>
+        </div>
+	    <div class="firstLogin_container">&nbsp;&nbsp;&nbsp;&nbsp;Hi，我是招展君，很荣幸你能参与这个app的内测。<br><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;在使用之前，大概会花3分钟的时间去给你阐述下这个app的设计理念以及会帮你解决哪些问题。<br><br><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;如果你有记账习惯的话，有时候会碰到下面一种情况：<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;在某月的某一天你花了一笔不小的钱买了一台电脑或者一部手机或者是缴纳了三个月的房租。在这时候你会记录该消费，从而导致你的当月预算严重“超支”。<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;上述的记账方式明显是不合理的。<br><br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;对于某些消费，是属于持续性消费。它有个很明显的特征就是有确定（或者预计）的使用期限。比如电脑是两年、手机是一年，房租是三个月、会员是一个月等等。这种类型的消费只不过是为日后的使用预先一次性付费而已。  如果把这些消费很单纯归类为普通支出的话，是十分不推荐的。<br><br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;这个app解决的正是这个问题。对于持续性消费，应该为其设置明确的起始时间和结束时间，app会把消费的总金额自动换算成每天“均摊下来”的金额，而这个金额正是该消费最合理的展现方式。<br><br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;另外，在具体的一天里，并不仅仅存在一个这种持续性消费。换个角度想想，每个月的大部分支出其实都是由若干条这种持续性消费组成。而这种消费只有在消费的瞬间感受会很强烈，在之后却很难被发现。所以会造成“钱还没咋花就没钱了"的感觉。  app的第二个功能就是帮你统计那些“隐形 ”的持续性消费，这类消费在这里被叫做每日成本。<br><br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;还有对于某个商品是否昂贵的定义，不能单凭它的价格去定义。举个例子，一部可以用一年的3000块手机和一部可以用三年的5000块钱的手机相比，虽然表面上看起来后者更“昂贵 ”，但是实际算下来，前者的日花费其实要比后者高不少，也就是说从这个角度来看，其实前者的反而还更加“昂贵”。这也就是app第三个功能，帮你建立合理的消费观念。有时候贵的东西反而还更划算。<br><br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;目前，app的核心功能还仅仅为该三大部分，等用户的存储数据到达一定规模之后，便会有更多更好玩、更意料不到、更有用的功能。所以你的参与与反馈对我来说十分宝贵~有任何想说的，都可以去首页右上角进去之后的建议反馈反馈给我或者直接跟我取得联系。感谢！<br><br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;最后，提醒下 等会进到首页之后，记得先去右上角的更多设置里设置账户初始金额哟。 希望这个app可以帮助你，祝你使用愉快~<br><br><br>
+        </div>
+        <div class="m_block_btn finishBtn">阅读完毕，开始使用。</div>
+
+    </div>
+    <div class="index">
+        <div class="toolBar">
+            <div class="toolBar_btn"></div>
+            <div class="toolBar_btn moreSetting">
+                更多设置
+            </div>
+        </div>
+        <div class="dailyInfo dailyCost">
+            <div class="dailyInfo_title">日成本</div>
+            <div class="dailyInfo_Num"></div>
+        </div>
+        <div class="dailyInfo dailyBenefit">
+            <div class="dailyInfo_title">日收益</div>
+            <div class="dailyInfo_Num"></div>
+        </div>
+        <hr/>
+        <div class="dailyInfo timeInfo">
+            <div class="dailyInfo_Num">00:00:00</div>
+            <div class="dailyInfo_title">后查看当日报告</div>
+        </div>
+    </div>
+</div>
+<script src="../config.js" charset="utf-8"></script>
+<script src="./index.js"></script>
+</body>
+</html>

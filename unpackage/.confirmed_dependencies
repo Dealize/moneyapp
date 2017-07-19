@@ -16,7 +16,12 @@
       "config.js",
       "index/index.css",
       "lib/fff.js",
-      "img/loading.gif"
+      "img/loading.gif",
+      "lib/require.js",
+      "lib/mui.css",
+      "lib/jquery.fullPage.css",
+      "lib/jquery.js",
+      "lib/jquery.ui.js"
     ],
     "refer": [
       "login/login.html",

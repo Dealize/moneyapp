@@ -6,21 +6,25 @@ window.version = '0.0.1';
 console.log('版本号：',window.version);
 window.debug = false;
 requirejs.config({
-    baseUrl:'../',
+    // baseUrl:'../',
     paths:{
-        common:'./js/common',
-        commonAjax:'./js/commonAjax',
-        host:'./host',
-        moment:'./lib/moment',
+        jquery:'../lib/jquery',
+        jqueryui:'../lib/jquery.ui',
+        fullpage:'../lib/jquery.fullpage',
+        // common:'./js/common',
+        // commonAjax:'./js/commonAjax',
+        // host:'./host',
+        // moment:'./lib/moment',
         //页面部分
         // login:'./login/login'
 
-        numKeyboard:'./widget/numKeyboard'
+        // numKeyboard:'./widget/numKeyboard'
     },
     shim:{
-        // vConsole:{
-        //     exports:'vConsole'
-        // },
+        jqueryui:{
+            deps:['jquery'],
+            exports:'jqueryui'
+        }
         // commonBridge:{
         //     exports:'commonBridge',
         //     deps:['jsBridge']

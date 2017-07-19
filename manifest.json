@@ -1,7 +1,7 @@
 {
 	"@platforms": ["android", "iPhone", "iPad"],
 	"id": "H59ECA94D",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "日成本",/*应用名称，程序桌面图标名称*/
+	"name": "money",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "0.0.1",/*应用版本名称*/
 		"code": "83"
@@ -109,7 +109,7 @@
 	"plus": {
 		"splashscreen": {
 			"autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
-			"waiting": true
+			"waiting": true,"delay":"4"
 		},
 		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
@@ -170,7 +170,7 @@
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
 						"retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": ""
+						"retina40": "","retina47":"C:/Users/qq351/Desktop/34316312319851.png"
 					},
 					"ipad": {
 						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
@@ -213,7 +213,12 @@
 					"index/index.css",
 					"lib/fff.js",
 					"img/loading.gif",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"lib/require.js",
+					"lib/mui.css",
+					"lib/jquery.fullPage.css",
+					"lib/jquery.js",
+					"lib/jquery.ui.js"
 				],
 				"refer": [
 					"login/login.html",
