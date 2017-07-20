@@ -24,14 +24,17 @@
 .finishBtn {
   margin-bottom: 1rem;
 }
-#index {
+#index_main {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   background: rgba(0, 0, 0, 0.2);
   flex-direction: column;
   justify-content: flex-end;
   box-sizing: border-box;
+}
+#index_coin {
+  background: rgba(0, 0, 0, 0.5);
 }
 .toolBar {
   position: absolute;

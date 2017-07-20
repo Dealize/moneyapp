@@ -10,6 +10,7 @@ requirejs.config({
     paths:{
         jquery:'../lib/jquery',
         jqueryui:'../lib/jquery.ui',
+        scrollOverflow:'../lib/scrolloverflow',
         fullpage:'../lib/jquery.fullpage',
         // common:'./js/common',
         // commonAjax:'./js/commonAjax',
@@ -23,12 +24,15 @@ requirejs.config({
     shim:{
         jqueryui:{
             deps:['jquery'],
-            exports:'jqueryui'
+        },
+        scrollOverflow:{
+            deps:['jquery'],
+            exports:'IScroll'
+        },
+        fullpage:{
+            deps:['jquery','scrollOverflow'],
+            exports:'fullpage'
         }
-        // commonBridge:{
-        //     exports:'commonBridge',
-        //     deps:['jsBridge']
-        // },
     },
     urlArgs:'v='+version
 });

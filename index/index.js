@@ -1,6 +1,7 @@
-require(['jquery','jqueryui','fullpage'], function ($,fullpage) {
+require(['jquery','jqueryui','fullpage','scrollOverflow'], function ($,ui,fullpage,IScroll) {
     var main = {
         init: function () {
+            console.log(IScroll);
             this._init_fullpage();
         },
         _init_fullpage: function () {
@@ -13,6 +14,7 @@ require(['jquery','jqueryui','fullpage'], function ($,fullpage) {
                     controlArrowColor: 'red',
                     verticalCentered: false,
                     loopHorizontal: false,
+                    scrollOverflow:true,
                     css3: true,
                     onLeave: function(index, nextIndex, direction){},
                     afterLoad: function(anchorLink, index){},
