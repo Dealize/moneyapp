@@ -31,6 +31,7 @@ textarea,
 menu {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 header,
 footer,
@@ -132,6 +133,10 @@ a,
 a:hover {
   text-decoration: none;
 }
+@font-face {
+  font-family: xiaomi;
+  src: url('../fonts/xiaomilanting.ttf');
+}
 body,
 textarea,
 input,
@@ -145,10 +150,18 @@ legend {
 }
 body {
   background: #000;
+  font-family: xiaomi;
 }
 a,
 a:hover {
   color: #333;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+.fp-slidesNav.bottom {
+  bottom: 0px !important;
 }
 input[type="text"],
 input[type="email"],
@@ -187,6 +200,7 @@ input[type="date"] {
   left: 0;
   top: 0;
   z-index: -1;
+  filter: blur(6px);
 }
 .bgCover {
   width: 100%;
@@ -328,6 +342,15 @@ body {
 }
 .m_card .m_card_center {
   margin: 0 auto;
+}
+.m_card2 {
+  background: #3e50b4;
+  margin: 10px 20px;
+  border-radius: 5px;
+}
+.m_card2 .m_card_body {
+  padding: 50px 10px;
+  font-size: 30px;
 }
 .m_list .m_list_item {
   margin: 1rem 0;

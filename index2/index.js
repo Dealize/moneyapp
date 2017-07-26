@@ -122,50 +122,7 @@ require(['FFF', 'host', 'common', 'commonAjax'], function(FFF, host, common, com
 	}
 
 	function countdown() {
-		var sevenAclock = new Date(),
-			timeFlag = 1,
-			timeSplit = ':';
-		sevenAclock.setHours(07);
-		sevenAclock.setMinutes(00);
-		sevenAclock.setSeconds(00);
-		var disHour, disMin, disSec, disTime;
-		var timer = setInterval(function() {
-			if(timeFlag % 2 == 0) {
-				timeSplit = ':';
-			} else {
-				timeSplit = ':';
-				var nowTime = new Date();
-				disTime = Math.floor((sevenAclock - nowTime) / 1000);
-				disHour = Math.floor(disTime / 3600);
-				disTime = disTime - disHour * 3600;
-				disMin = Math.floor(disTime / 60);
-				disTime = disTime - disMin * 60;
-				disSec = disTime;
 
-				if(disHour <= -1) {
-					showReportBtn();
-					clearInterval(timer);
-					return;
-				} else {
-					if(disHour < 10) {
-						disHour = '0' + disHour;
-					}
-					if(disMin < 10) {
-						disMin = '0' + disMin;
-					}
-					if(disSec < 10) {
-						disSec = '0' + disSec;
-					}
-					var timeStr = '';
-
-
-				}
-				
-			}
-            timeStr = disHour + timeSplit + disMin + timeSplit + disSec;
-            $timeInfoTime.html(timeStr);
-			timeFlag++;
-		}, 500)
 	}
 
 	function showReportBtn() {

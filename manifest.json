@@ -218,7 +218,9 @@
 					"lib/mui.css",
 					"lib/jquery.fullPage.css",
 					"lib/jquery.js",
-					"lib/jquery.ui.js"
+					"lib/jquery.ui.js",
+					"lib/scrolloverflow.js",
+					"fonts/xiaomilanting.ttf"
 				],
 				"refer": [
 					"login/login.html",

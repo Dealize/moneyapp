@@ -32,16 +32,39 @@
   flex-direction: column;
   justify-content: flex-end;
   box-sizing: border-box;
+  position: relative;
 }
-#index_coin {
-  background: rgba(0, 0, 0, 0.5);
+.index_scene {
+  padding: 20px;
+}
+.index_info .index_info_month {
+  display: flex;
+  justify-content: space-between;
+}
+.index_info .index_info_month > div {
+  border: 1px solid ;
+  text-align: center;
+  padding: 5px 10px;
+}
+.index_signPage {
+  display: flex;
+  align-items: inherit;
+  flex-direction: column;
+  height: 100%;
+  align-content: flex-end;
+  justify-content: flex-end;
+}
+.index_signPage .m_card3 .m_card_body {
+  margin: 15px;
+  text-align: center;
+  font-size: 1rem;
 }
 .toolBar {
   position: absolute;
   width: 100%;
   top: 3px;
   height: 0.6rem;
-  padding: 0 5px;
+  padding: 15px;
 }
 .moreSetting {
   border: 1px solid ;
@@ -67,6 +90,21 @@
   position: relative;
   top: -0.1rem;
 }
+.timeInfo {
+  height: 2.5rem;
+}
 .timeInfo .dailyInfo_Num {
   width: 4.7rem;
+}
+.m_card3 {
+  background: rgba(245, 245, 245, 0.5);
+  box-shadow: 3px 3px 6px #666;
+  border-radius: 5px;
+  color: #333;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid;
+}
+.m_card3 .m_card_body {
+  margin: 40px 0;
 }

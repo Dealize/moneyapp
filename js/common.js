@@ -52,6 +52,7 @@ define(['host'], function(host) {
 					
 				},
 				error:function(request,type,thrown){
+					console.log(type);
 					switch(type){
 						case 'timeout':
 							plus.nativeUI.alert('网络不佳，请在网络状况良好的时候再试。');

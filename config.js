@@ -12,9 +12,9 @@ requirejs.config({
         jqueryui:'../lib/jquery.ui',
         scrollOverflow:'../lib/scrolloverflow',
         fullpage:'../lib/jquery.fullpage',
-        // common:'./js/common',
-        // commonAjax:'./js/commonAjax',
-        // host:'./host',
+        common:'../js/common',
+        commonAjax:'../js/commonAjax',
+        host:'../host',
         // moment:'./lib/moment',
         //页面部分
         // login:'./login/login'
