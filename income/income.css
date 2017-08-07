@@ -1,6 +1,3 @@
-.bgCover {
-  background: rgba(0, 0, 0, 0.8);
-}
 .body {
   height: 73vh;
   padding-bottom: 0.5rem;
@@ -85,4 +82,9 @@
 .m_inputGroup {
   width: initial;
   margin: 1rem;
+}
+.dataPicker {
+  padding: 10px;
+  position: relative;
+  top: -10px;
 }
