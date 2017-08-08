@@ -1,4 +1,38 @@
-require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], function(FFF, host, common, commonAjax, numKeyboard,moment) {
+require(['common','commonAjax',
+    'jquery',
+    ], function (
+	common,
+    commonAjax,
+    $) {
+	var main = {
+		init:function () {
+			this._getDom();
+			this._mui_init();
+        },
+		_getDom:function () {
+			this._$money = $('.outlay_money_num');
+			this._$type = $('.outlay_type');
+			this._$typePicker = $('.outlay_type_num');
+			this._$kind = $('.outlay_kind');
+			this._$kindPicker = this._$kind.find('.mui-switch');
+			this._$time = $('.outlay_time');
+			this._$timePicker = this._$time.find('.outlay_dataPicker');
+			this._$time2 = $('.outlay_time2');
+			this._$time2Picker = this._$time2.find('.outlay_dataPicker');
+			this._$time2Day = this._$time2.find('.outlay_time_days');
+			
+        },
+		_mui_init:function () {
+            mui.init({
+            });
+            mui.plusReady(function() {
+            })
+
+        },
+	}
+
+	main.init();
+
 	mui.init({
 		// preloadPages:[
 		//     {
@@ -11,7 +45,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 		// ],
 		// preloadLimit:5//预加载窗口数量限制(一旦超出,先进先出)默认不限制
 	});
-	
+
 	var $btns = $('.btns'),
 		numKeyboard,
 		resultData = {
@@ -59,7 +93,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 		bind_outlay_btn();
 
 	})
-		
+
 
 	function getIncomeCategory(){
 		commonAjax.incomecategoryAll({}, function(res) {
@@ -71,7 +105,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 
 		},true);
 	}
-	
+
 	function set_pickerData(data) {
 		var finalData = [],
 			tempData = {};
@@ -177,7 +211,7 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 				$body.animate({
 					scrollTop: 100
 				}, 600)
-				
+
 			} else {
 				billTimeType = 1;
 				$outlay_kind_title.html('一次性收益');
@@ -271,9 +305,9 @@ require(['FFF', 'host', 'common', 'commonAjax', 'numKeyboard','moment'], functio
 			commonAjax.billAdd(resultData,function(res){
 				alert('保存成功。')
 				mui.back();
-			})	
+			})
 		}
-		
+
 	}
 
 	function bind_windowEvent(){

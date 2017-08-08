@@ -102,7 +102,16 @@ define(['host'], function(host) {
 //			_webview.show(data.id, 'fade-in', 400);
 			_webview.show("fade-in",400);
 			
-		}
+		},
+        /**
+		 * 监听键盘是否呼起
+         * @param data
+		 * data.activeFn:
+		 * data.notActiveFn:
+         */
+		monitor_Keyboard_isActive:function (data) {
+
+        }
 	}
 
 	return exports;

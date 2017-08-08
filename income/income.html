@@ -5,9 +5,8 @@
     <meta name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <title></title>
+    <script src="../lib/require.js"></script>
     <script src="../lib/mui.min.js"></script>
-    <script src="../lib/lib.js"></script>
-    <script src="../lib/fff.js"></script>
     <script src="../lib/mui.picker.all.js"></script>
     <script>
         (function (doc, win) {
@@ -42,13 +41,13 @@
 </div>
 <div class="title">
     <div class="title_left mui-action-back"> <</div>
-    <div class="title_center">记支出</div>
+    <div class="title_center">记收入</div>
     <div class="title_right"></div>
 </div>
 <div class="body outlay">
     <div class="outlay_item outlay_money">
         <span class="outlay_money_title">金额：</span>
-        <span class="outlay_money_num">0</span>
+        <input class="outlay_money_num" value="0" type="number">
     </div>
     <div class="outlay_item outlay_type">
         <span class="outlay_type_title">类别：</span>
@@ -66,12 +65,14 @@
     <div class="outlay_item outlay_time">
         <label class="outlay_time_title">收益于</label>
         <!--<input type="date" id="time1" class="outlay_time_num" placeholder="请选择时间"/>-->
-        <span id='demo4' data-options='{"type":"date","value":"2015-10-10 10:10","beginYear":2010,"endYear":2020}' class="dataPicker">选择日期</span>
+        <span data-options='{"type":"date","value":"2015-10-10 10:10","beginYear":2010,"endYear":2020}' class="outlay_dataPicker">选择日期</span>
     </div>
     <div class="outlay_item outlay_time2 ">
-        <label for="time2" class="outlay_time_title">结束于</label>
-        <label for="time2" class="outlay_time_days">11天</label>
-        <input type="date" id="time2" class="outlay_time_num"/>
+        <label class="outlay_time_title">结束于</label>
+        <label class="outlay_time_days">11天</label>
+        <span data-options='{"type":"date","value":"2015-10-10 10:10","beginYear":2010,"endYear":2020}' class="outlay_dataPicker">选择日期</span>
+
+        <!--<input type="date" id="time2" class="outlay_time_num"/>-->
     </div>
     <div class="m_inputGroup outlay_comment">
         <div class="m_inputGroup_container">
@@ -94,7 +95,7 @@
     (function($) {
         $.init();
         var result = $('#result')[0];
-        var btns = $('.btn');
+        var btns = $('#demo4');
         btns.each(function(i, btn) {
             btn.addEventListener('tap', function() {
                 var optionsJson = this.getAttribute('data-options') || '{}';

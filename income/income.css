@@ -36,6 +36,9 @@
 .outlay_money .outlay_money_num {
   font-size: 2rem;
   font-weight: lighter;
+  text-align: right;
+  width: 70%;
+  height: 2rem;
 }
 .outlay_kind {
   display: flex;
@@ -83,7 +86,7 @@
   width: initial;
   margin: 1rem;
 }
-.dataPicker {
+.outlay_dataPicker {
   padding: 10px;
   position: relative;
   top: -10px;

@@ -171,6 +171,9 @@ input[type="date"] {
   background: rgba(0, 0, 0, 0);
   color: #fff;
   border: 0 !important;
+  padding: 0;
+  margin: 0;
+  height: initial;
 }
 ::-webkit-input-placeholder {
   /* WebKit browsers */
